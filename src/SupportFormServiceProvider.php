@@ -15,12 +15,11 @@ class SupportFormServiceProvider extends PackageServiceProvider
             ->name('laravel-support-form')
             ->hasConfigFile()
             ->hasViews();
-
     }
 
     public function packageBooted()
     {
-        Route::macro('supportForm', function(string $url = '') {
+        Route::macro('supportForm', function (string $url = '') {
             Route::post("{$url}/support-form", HandleSupportFormSubmissionController::class)->name('supportForm.submit');
         });
     }
