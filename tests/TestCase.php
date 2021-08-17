@@ -3,6 +3,7 @@
 namespace Spatie\LaravelSupportForm\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Route;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Spatie\LaravelSupportForm\SupportFormServiceProvider;
 
@@ -15,6 +16,8 @@ class TestCase extends Orchestra
         Factory::guessFactoryNamesUsing(
             fn (string $modelName) => 'Spatie\\LaravelSupportForm\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
+
+        Route::supportForm();
     }
 
     protected function getPackageProviders($app)

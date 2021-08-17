@@ -1,2 +1,0 @@
-<html><body>This is the button
-</body></html>

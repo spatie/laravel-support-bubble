@@ -2,8 +2,10 @@
 
 namespace Spatie\LaravelSupportForm;
 
+use Illuminate\Support\Facades\Route;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Spatie\LaravelSupportForm\Http\Controllers\HandleSupportFormSubmissionController;
 
 class SupportFormServiceProvider extends PackageServiceProvider
 {
@@ -12,7 +14,14 @@ class SupportFormServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-support-form')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-support-form_table');
+            ->hasViews();
+
+    }
+
+    public function packageBooted()
+    {
+        Route::macro('supportForm', function(string $url = '') {
+            Route::post("{$url}/support-form", HandleSupportFormSubmissionController::class)->name('supportForm.submit');
+        });
     }
 }
