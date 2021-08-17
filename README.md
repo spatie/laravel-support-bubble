@@ -39,7 +39,7 @@ return [
 
 ## Usage
 
-Coming soon
+Coming soon...
 
 ## Testing
 
