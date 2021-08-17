@@ -1,4 +1,4 @@
-<div class="support-form-form">
+<div class="support-form-inner">
     <form method="post" action="{{ route('supportForm.submit') }}">
         @csrf
 

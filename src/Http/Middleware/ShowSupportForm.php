@@ -44,7 +44,7 @@ class ShowSupportForm
 
         $content = ''
             . substr($content, 0, $closingBodyTagPosition)
-            . view('support-form::button')->render()
+            . view('support-form::outer')->render()
             . substr($content, $closingBodyTagPosition);
 
         return $response->setContent($content);
