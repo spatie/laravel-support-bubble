@@ -6,6 +6,5 @@ class HandleSupportFormSubmissionController
 {
     public function __invoke()
     {
-
     }
 }
