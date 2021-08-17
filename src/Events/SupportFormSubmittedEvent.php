@@ -1,8 +1,8 @@
 <?php
 
-namespace Spatie\LaravelSupportForm\Events;
+namespace Spatie\SupportForm\Events;
 
-use Spatie\LaravelSupportForm\Http\Requests\SupportFormRequest;
+use Spatie\SupportForm\Http\Requests\SupportFormRequest;
 
 class SupportFormSubmittedEvent
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Spatie\LaravelSupportForm;
+namespace Spatie\SupportForm;
 
 use Illuminate\Support\Facades\Route;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Spatie\LaravelSupportForm\Http\Controllers\HandleSupportFormSubmissionController;
+use Spatie\SupportForm\Http\Controllers\HandleSupportFormSubmissionController;
 
 class SupportFormServiceProvider extends PackageServiceProvider
 {

@@ -1,7 +1,7 @@
 <?php
 
 use function Pest\Laravel\get;
-use Spatie\LaravelSupportForm\Http\Middleware\ShowSupportForm;
+use Spatie\SupportForm\Http\Middleware\ShowSupportForm;
 
 it('will add the support form to a response', function () {
     Route::get('/', function () {

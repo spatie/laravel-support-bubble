@@ -1,11 +1,11 @@
 <?php
 
-namespace Spatie\LaravelSupportForm\Tests;
+namespace Spatie\SupportForm\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Route;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Spatie\LaravelSupportForm\SupportFormServiceProvider;
+use Spatie\SupportForm\SupportFormServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -14,7 +14,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Spatie\\LaravelSupportForm\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Spatie\\SupportForm\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
 
         Route::supportForm();

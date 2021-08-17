@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\LaravelSupportForm\Http\Middleware;
+namespace Spatie\SupportForm\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Response;

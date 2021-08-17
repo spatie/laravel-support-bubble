@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\LaravelSupportForm\Http\Requests;
+namespace Spatie\SupportForm\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

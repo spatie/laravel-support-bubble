@@ -1,3 +1,5 @@
+**DO NOT USE YET, PACKAGE IN DEVELOPMENT**
+
 # A non-intrusive support form that can be displayed on any page
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-support-form.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-support-form)
@@ -5,7 +7,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/spatie/laravel-support-form/Check%20&%20fix%20styling?label=code%20style)](https://github.com/spatie/laravel-support-form/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-support-form.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-support-form)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Using this package you can quickly add a button that will show a support form on any page.
 
 ## Support us
 
@@ -23,16 +25,9 @@ You can install the package via composer:
 composer require spatie/laravel-support-form
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --provider="Spatie\LaravelSupportForm\LaravelSupportFormServiceProvider" --tag="laravel-support-form-migrations"
-php artisan migrate
-```
-
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Spatie\LaravelSupportForm\LaravelSupportFormServiceProvider" --tag="laravel-support-form-config"
+php artisan vendor:publish --provider="Spatie\LaravelSupportForm\LaravelSupportFormServiceProvider" --tag="support-form-config"
 ```
 
 This is the contents of the published config file:
@@ -44,10 +39,7 @@ return [
 
 ## Usage
 
-```php
-$laravel-support-form = new Spatie\LaravelSupportForm();
-echo $laravel-support-form->echoPhrase('Hello, Spatie!');
-```
+Coming soon
 
 ## Testing
 

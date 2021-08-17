@@ -1,9 +1,9 @@
 <?php
 
-namespace Spatie\LaravelSupportForm\Http\Controllers;
+namespace Spatie\SupportForm\Http\Controllers;
 
-use Spatie\LaravelSupportForm\Events\SupportFormSubmittedEvent;
-use Spatie\LaravelSupportForm\Http\Requests\SupportFormRequest;
+use Spatie\SupportForm\Events\SupportFormSubmittedEvent;
+use Spatie\SupportForm\Http\Requests\SupportFormRequest;
 
 class HandleSupportFormSubmissionController
 {

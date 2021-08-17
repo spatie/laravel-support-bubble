@@ -37,18 +37,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\LaravelSupportForm\\": "src",
-            "Spatie\\LaravelSupportForm\\Database\\Factories\\": "database/factories"
+            "Spatie\\SupportForm\\": "src",
+            "Spatie\\SupportForm\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\LaravelSupportForm\\Tests\\": "tests"
+            "Spatie\\SupportForm\\Tests\\": "tests"
         }
     },
     "scripts": {
         "test": "./vendor/bin/testbench package:test --parallel --no-coverage",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+        "test-coverage": "vendor/bin/pest --coverage-html coverage"
     },
     "config": {
         "sort-packages": true
@@ -56,11 +56,8 @@
     "extra": {
         "laravel": {
             "providers": [
-              "SupportFormServiceProvider"
-            ],
-            "aliases": {
-                "LaravelSupportForm": "Spatie\\LaravelSupportForm\\LaravelSupportFormFacade"
-            }
+              "Spatie\\LaravelSupportForm\\SupportFormServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",
