@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use Spatie\SupportForm\Events\SupportFormSubmittedEvent;
 use function Pest\Laravel\post;
+use Spatie\SupportForm\Events\SupportFormSubmittedEvent;
 
 it('can except a support form submission', function () {
     Event::fake();
