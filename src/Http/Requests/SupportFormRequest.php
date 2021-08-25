@@ -8,9 +8,6 @@ class SupportFormRequest extends FormRequest
 {
     public function rules()
     {
-        return [
-            'email' => 'required|email',
-            'text' => 'required',
-        ];
+        return config('support-form.rules');
     }
 }

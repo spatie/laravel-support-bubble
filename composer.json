@@ -56,7 +56,7 @@
     "extra": {
         "laravel": {
             "providers": [
-              "Spatie\\LaravelSupportForm\\SupportFormServiceProvider"
+              "Spatie\\SupportForm\\SupportFormServiceProvider"
             ]
         }
     },
