@@ -53,5 +53,5 @@ dataset('formFields', [
     'name',
     'subject',
     'email',
-    'message'
+    'message',
 ]);
