@@ -5,7 +5,7 @@ namespace Spatie\SupportBubble\Components;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class SupportBubble extends Component
+class SupportBubbleComponent extends Component
 {
     public string $formAction;
 
