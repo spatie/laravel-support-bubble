@@ -15,7 +15,7 @@ beforeEach(function () {
     Event::fake();
 });
 
-it('can except a support form submission', function () {
+it('can accept a support form submission', function () {
     post(route('supportBubble.submit'), $this->formValues)->assertSuccessful();
 
     Event::assertDispatched(function (SupportBubbleSubmittedEvent $event) {

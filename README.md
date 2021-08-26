@@ -187,6 +187,13 @@ Please review [our security policy](../../security/policy) on how to report secu
 - [Ruben Van Assche](https://github.com/rubenvanassche)
 - [All Contributors](../../contributors)
 
+## Alternatives
+
+If you need more options for your support bubble, consider using one of these:
+
+- [Freddy Feedback](https://freddyfeedback.com)
+- [Beadcon by Help Scout](https://www.helpscout.com)
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
