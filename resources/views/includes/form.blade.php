@@ -1,25 +1,30 @@
 <div class="support-bubble-inner">
     <p class="pb-4">
-
+        Contact Flare support for any questions, suggestions or bugs. We're available on all weekdays.
     </p>
 
     <p class="spatie-support-bubble__error pb-4 text-red-600" style="display: none"></p>
 
-    <form method="post" action="{{ route(config('support-bubble.form_action_route')) }}" class="flex flex-col gap-2">
+    <form method="post" action="{{ route(config('support-bubble.form_action_route')) }}"
+          class="flex flex-col gap-3">
         <label for="name" class="{{ $name ? 'hidden' : '' }}">
-            <input type="text" name="name" required placeholder="Your name" value="{{ $name }}" class="input">
+            Your name
+            <input type="text" name="name" id="name" required value="{{ $name }}" class="input">
         </label>
 
         <label for="email" class="{{ $email ? 'hidden' : '' }}">
-            <input type="email" name="email" required placeholder="E-mail" value="{{ $email }}" class="input">
+            E-mail address
+            <input type="email" name="email" id="email" required value="{{ $email }}" class="input">
         </label>
 
         <label for="subject">
-            <input type="text" name="subject" required placeholder="Subject" class="input">
+            Subject
+            <input type="text" name="subject" id="subject" required class="input">
         </label>
 
         <label for="message">
-            <textarea name="message" required class="input" placeholder="How can we help?"></textarea>
+            How can we help?
+            <textarea name="message" id="message" required class="input"></textarea>
         </label>
 
         <button type="submit" class="button">Submit</button>

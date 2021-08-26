@@ -2,6 +2,7 @@
 
 namespace Spatie\SupportBubble\Components;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 use Str;
 
@@ -26,12 +27,7 @@ class SupportBubble extends Component
         $this->name = config('support-bubble.prefill_logged_in_user') ? (optional(request()->user())->name ?? '') : '';
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
-     */
-    public function render()
+    public function render(): View
     {
         return view("support-bubble::components.support-bubble");
     }

@@ -17,13 +17,10 @@ class SupportBubbleServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        $package->name('laravel-support-bubble');
-
-        if (config('support-bubble.enabled')) {
-            $package
-                ->hasViews()
-                ->hasConfigFile();
-        }
+        $package
+            ->name('laravel-support-bubble')
+            ->hasConfigFile()
+            ->hasViews();
     }
 
     public function packageBooted()

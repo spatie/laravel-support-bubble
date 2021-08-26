@@ -3,7 +3,7 @@
     $position .= $positionX === 'right' ? 'right-0 items-end ' : 'left-0';
 @endphp
 
-<div class="spatie-support-bubble fixed {{$position}} z-10 flex-col m-4 gap-3 w-64" style="display: none;">
+<div class="spatie-support-bubble fixed {{$position}} z-10 flex-col m-4 gap-3" style="max-width: 300px; display: none;">
     <div class="spatie-support-bubble__container bg-white shadow-xl border border-gray-300 rounded p-4" style="display: none">
         <div class="spatie-support-bubble__form">
             @include('support-bubble::includes.form', compact('email'))
