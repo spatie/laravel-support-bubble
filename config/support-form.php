@@ -28,5 +28,5 @@ return [
      * If configured we'll set-up an event listener for you that
      * will e-mail any chat bubble responses to this address.
      */
-    'mail_to' => 'alex@spatie.be',
+    'mail_to' => null,
 ];
