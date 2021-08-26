@@ -17,18 +17,26 @@ class SupportBubbleServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        $package
-            ->name('laravel-support-bubble')
-            ->hasViews()
-            ->hasConfigFile();
+        $package->name('laravel-support-bubble');
+
+        if (config('support-bubble.enabled')) {
+            $package
+                ->hasViews()
+                ->hasConfigFile();
+        }
     }
 
     public function packageBooted()
     {
+        if (!config('support-bubble.enabled')) {
+            return;
+        }
+
         Blade::component('support-bubble', SupportBubble::class);
 
         Route::macro('supportBubble', function (string $url = '') {
-//            Route::post("{$url}/support-bubble", HandleSupportBubbleSubmissionController::class)->name(config('support-bubble.form_action_route'));
+            Route::post("{$url}/support-bubble", HandleSupportBubbleSubmissionController::class)
+                ->name(config('support-bubble.form_action_route'));
         });
 
         if (config('support-bubble.mail_to')) {

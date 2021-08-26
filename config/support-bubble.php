@@ -5,12 +5,12 @@ return [
     /*
      * Use this setting to enable the support form.
      */
-    'enabled' => env('SUPPORT_FORM_ENABLED', true),
+    'enabled' => env('SUPPORT_BUBBLE_ENABLED', true),
 
     /*
      * Route name
      */
-    'form_action_route' => 'SupportBubble.submit',
+    'form_action_route' => 'supportBubble.submit',
 
     /*
      * Form submission rules
