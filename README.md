@@ -34,6 +34,19 @@ You can install the package via composer:
 composer require spatie/laravel-support-bubble
 ```
 
+Next, you need to add the `<x-support-bubble />` component in the views where you want to display the support bubble. If you want it to show up on all pages you can add it to your `layout.blade.php` file.
+
+Finally you need to register the required routes. You can do this by this by adding the following macro in your `routes/api.php` file:
+
+```php
+Route::supportBubble();
+```
+
+Finally you need to decide where you want to send the support bubble's messages to. Following options are available:
+
+- email: publish the config file and enter your email in `mail_to`
+- diy: register and event listener for the `Spatie\SupportBubble\Events\SupportBubbleSubmittedEvent` and handle it yourself
+
 You can publish the config file with:
 ```bash
 php artisan vendor:publish --provider="Spatie\LaravelSupportBubble\LaravelSupportBubbleServiceProvider" --tag="support-bubble-config"
