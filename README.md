@@ -7,7 +7,14 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/spatie/laravel-support-bubble/Check%20&%20fix%20styling?label=code%20style)](https://github.com/spatie/laravel-support-bubble/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-support-bubble.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-support-bubble)
 
-Using this package you can quickly add a button that will show a support form on any page.
+Using this package you can quickly add a chat bubble that opens a support form on any page. It comes with batteries included:
+
+- TailwindCSS styling out of the box
+- Won't ask user information if there's a logged in user
+- Includes some meta data like URL and IP address
+- Easily extendable using custom views, language files and event listeners
+
+You can see it in action below and on [Flare](https://flareapp.io/)!
 
 ## Support us
 
@@ -30,7 +37,7 @@ You can publish the config file with:
 php artisan vendor:publish --provider="Spatie\LaravelSupportBubble\LaravelSupportBubbleServiceProvider" --tag="support-bubble-config"
 ```
 
-This is the contents of the published config file:
+These are the contents of the published config file:
 
 ```php
 return [
