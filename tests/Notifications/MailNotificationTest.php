@@ -36,4 +36,12 @@ it('can be configured to send a notification', function() {
     });
 });
 
+it('can be rendered', function() {
+    $notification = new BubbleResponseNotification(...formValues());
+
+    $html = (string)$notification->toMail(new AnonymousNotifiable())->render();
+
+    expect($html)->toContain('left a new message');
+});
+
 
