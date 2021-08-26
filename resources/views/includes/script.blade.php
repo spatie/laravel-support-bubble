@@ -11,7 +11,24 @@
             .addEventListener('click', () => {
                 responseContainer.style.display = 'none';
                 formContainer.style.display = 'block';
-                container.style.display = container.style.display === 'flex' ? 'none' : 'flex';
+
+                const opening = container.style.display === 'none';
+
+                if (opening) {
+                    container.style.display = 'flex';
+
+                    setTimeout(() => {
+                        container.classList.remove('translate-x-full', 'opacity-0');
+                        container.classList.add('translate-x-0', 'opacity-100');
+                    }, 10);
+                } else {
+                    container.classList.remove('translate-x-0', 'opacity-100');
+                    container.classList.add('translate-x-full', 'opacity-0');
+
+                    setTimeout(() => {
+                        container.style.display = 'none';
+                    }, 160);
+                }
             });
 
         element.querySelector('.spatie-support-bubble__form form')
