@@ -1,17 +1,17 @@
 **DO NOT USE YET, PACKAGE IN DEVELOPMENT**
 
-# A non-intrusive support form that can be displayed on any page
+# A non-intrusive support bubble that can be displayed on any page
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-support-form.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-support-form)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/laravel-support-form/run-tests?label=tests)](https://github.com/spatie/laravel-support-form/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/spatie/laravel-support-form/Check%20&%20fix%20styling?label=code%20style)](https://github.com/spatie/laravel-support-form/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-support-form.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-support-form)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-support-bubble.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-support-bubble)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/laravel-support-bubble/run-tests?label=tests)](https://github.com/spatie/laravel-support-bubble/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/spatie/laravel-support-bubble/Check%20&%20fix%20styling?label=code%20style)](https://github.com/spatie/laravel-support-bubble/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-support-bubble.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-support-bubble)
 
 Using this package you can quickly add a button that will show a support form on any page.
 
 ## Support us
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-support-form.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-support-form)
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-support-bubble.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-support-bubble)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
@@ -22,12 +22,12 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require spatie/laravel-support-form
+composer require spatie/laravel-support-bubble
 ```
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Spatie\LaravelSupportForm\LaravelSupportFormServiceProvider" --tag="support-form-config"
+php artisan vendor:publish --provider="Spatie\LaravelSupportBubble\LaravelSupportBubbleServiceProvider" --tag="support-bubble-config"
 ```
 
 This is the contents of the published config file:
@@ -61,6 +61,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
+- [Alex Vanderbist](https://github.com/alexvanderbist)
 - [Freek Van der Herten](https://github.com/freekmurze)
 - [Ruben Van Assche](https://github.com/rubenvanassche)
 - [All Contributors](../../contributors)

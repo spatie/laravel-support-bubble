@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\SupportForm\Database\Factories;
+namespace Spatie\SupportBubble\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

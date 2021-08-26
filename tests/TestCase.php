@@ -1,11 +1,11 @@
 <?php
 
-namespace Spatie\SupportForm\Tests;
+namespace Spatie\SupportBubble\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Route;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Spatie\SupportForm\SupportFormServiceProvider;
+use Spatie\SupportBubble\SupportBubbleServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -14,16 +14,16 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Spatie\\SupportForm\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Spatie\\SupportBubble\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
 
-        Route::supportForm();
+        Route::SupportBubble();
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            SupportFormServiceProvider::class,
+            SupportBubbleServiceProvider::class,
         ];
     }
 
@@ -32,7 +32,7 @@ class TestCase extends Orchestra
         config()->set('database.default', 'testing');
 
         /*
-        include_once __DIR__.'/../database/migrations/create_laravel-support-form_table.php.stub';
+        include_once __DIR__.'/../database/migrations/create_laravel-support-bubble_table.php.stub';
         (new \CreatePackageTable())->up();
         */
     }

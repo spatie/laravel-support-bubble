@@ -1,10 +1,10 @@
 <?php
 
-namespace Spatie\SupportForm\Events;
+namespace Spatie\SupportBubble\Events;
 
-use Spatie\SupportForm\Http\Requests\SupportFormRequest;
+use Spatie\SupportBubble\Http\Requests\SupportBubbleRequest;
 
-class SupportFormSubmittedEvent
+class SupportBubbleSubmittedEvent
 {
     public function __construct(
         public string $subject,
@@ -14,7 +14,7 @@ class SupportFormSubmittedEvent
     ) {
     }
 
-    public static function fromRequest(SupportFormRequest $request): self
+    public static function fromRequest(SupportBubbleRequest $request): self
     {
         return new static(
             $request->subject,

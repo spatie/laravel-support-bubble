@@ -1,14 +1,19 @@
 {
-    "name": "spatie/laravel-support-form",
-    "description": "A non-intrusive support form that can be displayed on any page",
+    "name": "spatie/laravel-support-bubble",
+    "description": "A non-intrusive support chat bubble that can be displayed on any page",
     "keywords": [
         "spatie",
         "laravel",
-        "laravel-support-form"
+        "laravel-support-bubble"
     ],
-    "homepage": "https://github.com/spatie/laravel-support-form",
+    "homepage": "https://github.com/spatie/laravel-support-bubble",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Alex Vanderbist",
+            "email": "alex@spatie.be",
+            "role": "Developer"
+        },
         {
             "name": "Freek Van der Herten",
             "email": "freek@spatie.be",
@@ -37,13 +42,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\SupportForm\\": "src",
-            "Spatie\\SupportForm\\Database\\Factories\\": "database/factories"
+            "Spatie\\SupportBubble\\": "src",
+            "Spatie\\SupportBubble\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\SupportForm\\Tests\\": "tests"
+            "Spatie\\SupportBubble\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -56,7 +61,7 @@
     "extra": {
         "laravel": {
             "providers": [
-              "Spatie\\SupportForm\\SupportFormServiceProvider"
+              "Spatie\\SupportBubble\\SupportBubbleServiceProvider"
             ]
         }
     },

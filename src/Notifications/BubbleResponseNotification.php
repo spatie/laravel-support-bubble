@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\SupportForm\Notifications;
+namespace Spatie\SupportBubble\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Spatie\SupportForm\Events\SupportFormSubmittedEvent;
+use Spatie\SupportBubble\Events\SupportBubbleSubmittedEvent;
 
 class BubbleResponseNotification extends Notification implements ShouldQueue
 {
@@ -20,7 +20,7 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
     ) {
     }
 
-    public static function fromEvent(SupportFormSubmittedEvent $event): self
+    public static function fromEvent(SupportBubbleSubmittedEvent $event): self
     {
         return new self(
             $event->subject,

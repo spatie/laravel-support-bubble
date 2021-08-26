@@ -1,7 +1,11 @@
-<div class="support-form-inner">
-    <p class="spatie-support-form__error pb-4 text-red-600" style="display: none"></p>
+<div class="support-bubble-inner">
+    <p class="pb-4">
 
-    <form method="post" action="{{ route(config('support-form.form_action_route')) }}" class="flex flex-col gap-2">
+    </p>
+
+    <p class="spatie-support-bubble__error pb-4 text-red-600" style="display: none"></p>
+
+    <form method="post" action="{{ route(config('support-bubble.form_action_route')) }}" class="flex flex-col gap-2">
         <label for="name" class="{{ $name ? 'hidden' : '' }}">
             <input type="text" name="name" required placeholder="Your name" value="{{ $name }}" class="input">
         </label>

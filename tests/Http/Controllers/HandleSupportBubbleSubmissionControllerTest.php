@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Event;
 use function Pest\Laravel\post;
-use Spatie\SupportForm\Events\SupportFormSubmittedEvent;
+use Spatie\SupportBubble\Events\SupportBubbleSubmittedEvent;
 
 it('can except a support form submission', function () {
     Event::fake();
@@ -12,9 +12,9 @@ it('can except a support form submission', function () {
         'text' => 'My question',
     ];
 
-    post(route('supportForm.submit'), $values)->assertSuccessful();
+    post(route('SupportBubble.submit'), $values)->assertSuccessful();
 
-    Event::assertDispatched(function (SupportFormSubmittedEvent $event) use ($values) {
+    Event::assertDispatched(function (SupportBubbleSubmittedEvent $event) use ($values) {
         expect($event->request->validated())->toEqual($values);
 
         return true;

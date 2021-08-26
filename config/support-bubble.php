@@ -10,7 +10,7 @@ return [
     /*
      * Route name
      */
-    'form_action_route' => 'supportForm.submit',
+    'form_action_route' => 'SupportBubble.submit',
 
     /*
      * Form submission rules

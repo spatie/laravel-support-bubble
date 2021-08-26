@@ -3,19 +3,19 @@
     $position .= $positionX === 'right' ? 'right-0 items-end ' : 'left-0';
 @endphp
 
-<div class="spatie-support-form fixed {{$position}} z-10 flex-col m-4 gap-3 w-64" style="display: none;">
-    <div class="spatie-support-form__container bg-white shadow-xl border border-gray-300 rounded p-4" style="display: none">
-        <div class="spatie-support-form__form">
-            @include('support-form::includes.form', compact('email'))
+<div class="spatie-support-bubble fixed {{$position}} z-10 flex-col m-4 gap-3 w-64" style="display: none;">
+    <div class="spatie-support-bubble__container bg-white shadow-xl border border-gray-300 rounded p-4" style="display: none">
+        <div class="spatie-support-bubble__form">
+            @include('support-bubble::includes.form', compact('email'))
         </div>
 
-        <div class="spatie-support-form__response" style="display: none">
+        <div class="spatie-support-bubble__response" style="display: none">
         </div>
     </div>
 
-    <div class="spatie-support-form__button">
-        @include('support-form::includes.button')
+    <div class="spatie-support-bubble__button">
+        @include('support-bubble::includes.button')
     </div>
 </div>
 
-@include('support-form::includes.script')
+@include('support-bubble::includes.script')

@@ -1,20 +1,20 @@
 <script>
-    function bootstrapSupportForm(element) {
+    function bootstrapSupportBubble(element) {
         element.style.display = 'flex';
 
-        const container = element.querySelector('.spatie-support-form__container');
-        const formContainer = element.querySelector('.spatie-support-form__form');
-        const responseContainer = element.querySelector('.spatie-support-form__response');
-        const errorMessage = element.querySelector('.spatie-support-form__error');
+        const container = element.querySelector('.spatie-support-bubble__container');
+        const formContainer = element.querySelector('.spatie-support-bubble__form');
+        const responseContainer = element.querySelector('.spatie-support-bubble__response');
+        const errorMessage = element.querySelector('.spatie-support-bubble__error');
 
-        element.querySelector('.spatie-support-form__button button')
+        element.querySelector('.spatie-support-bubble__button button')
             .addEventListener('click', () => {
                 responseContainer.style.display = 'none';
                 formContainer.style.display = 'flex';
                 container.style.display = container.style.display === 'flex' ? 'none' : 'flex';
             });
 
-        element.querySelector('.spatie-support-form__form form')
+        element.querySelector('.spatie-support-bubble__form form')
             .addEventListener('submit', (event) => {
                 event.preventDefault();
                 const formData = new FormData(event.target)
@@ -51,7 +51,7 @@
 
     window.addEventListener('load', () => {
         document
-            .querySelectorAll('.spatie-support-form')
-            .forEach(form => bootstrapSupportForm(form));
+            .querySelectorAll('.spatie-support-bubble')
+            .forEach(form => bootstrapSupportBubble(form));
     });
 </script>
