@@ -7,10 +7,10 @@ use Spatie\SupportBubble\Http\Requests\SupportBubbleRequest;
 class SupportBubbleSubmittedEvent
 {
     public function __construct(
-        public string|null $subject,
-        public string|null $message,
-        public string|null $email,
-        public string|null $name,
+        public string | null $subject,
+        public string | null $message,
+        public string | null $email,
+        public string | null $name,
     ) {
     }
 

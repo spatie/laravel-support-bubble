@@ -15,7 +15,7 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
     public function __construct(
         public string $subject,
         public string $message,
-        public string|null $email,
+        public string | null $email,
         public string $name,
     ) {
     }

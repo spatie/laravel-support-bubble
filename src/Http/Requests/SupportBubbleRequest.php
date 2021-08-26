@@ -3,7 +3,6 @@
 namespace Spatie\SupportBubble\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rules\RequiredIf;
 
 class SupportBubbleRequest extends FormRequest
 {
@@ -13,7 +12,7 @@ class SupportBubbleRequest extends FormRequest
             'name' => config('support-bubble.fields.name') ? 'required' : '',
             'email' => [
                 'email',
-                config('support-bubble.fields.email') ? 'required' : ''
+                config('support-bubble.fields.email') ? 'required' : '',
             ],
             'subject' => config('support-bubble.fields.subject') ? 'required' : '',
             'message' => config('support-bubble.fields.message') ? 'required' : '',
