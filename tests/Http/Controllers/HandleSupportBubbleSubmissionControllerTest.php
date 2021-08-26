@@ -11,11 +11,11 @@ beforeEach(function() {
         'email' => 'john@example.com',
         'message' => 'My question',
     ];
+
+    Event::fake();
 });
 
 it('can except a support form submission', function () {
-    Event::fake();
-
     post(route('supportBubble.submit'), $this->formValues)->assertSuccessful();
 
     Event::assertDispatched(function (SupportBubbleSubmittedEvent $event)  {
@@ -35,4 +35,21 @@ it('will validate all fields by default', function (string $name) {
     unset($this->formValues[$name]);
 
     post(route('supportBubble.submit'), $this->formValues)->assertInvalid([$name]);
-})->with(['name', 'subject', 'email', 'message']);
+})->with('formFields');
+
+it('can disable validation for a field', function (string $name) {
+    unset($this->formValues[$name]);
+
+    config()->set("support-bubble.fields.{$name}", false);
+
+    post(route('supportBubble.submit'), $this->formValues)->assertValid();
+
+    Event::assertDispatched(SupportBubbleSubmittedEvent::class);
+})->with('formFields');
+
+dataset('formFields', [
+    'name',
+    'subject',
+    'email',
+    'message'
+]);
