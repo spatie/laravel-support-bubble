@@ -28,7 +28,7 @@ class SupportBubbleServiceProvider extends PackageServiceProvider
 
     public function packageBooted()
     {
-        if (!config('support-bubble.enabled')) {
+        if (! config('support-bubble.enabled')) {
             return;
         }
 
