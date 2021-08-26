@@ -16,9 +16,17 @@ return [
      * Form submission rules
      */
     'rules' => [
+        'name' => 'required',
         'email' => 'required|email',
-        'text' => 'required',
+        'subject' => 'required',
+        'message' => 'required',
     ],
 
-    'prefill_email_from_request' => true,
+    'prefill_logged_in_user' => true,
+
+    /*
+     * If configured we'll set-up an event listener for you that
+     * will e-mail any chat bubble responses to this address.
+     */
+    'mail_to' => 'alex@spatie.be',
 ];

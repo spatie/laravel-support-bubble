@@ -9,7 +9,7 @@ class HandleSupportFormSubmissionController
 {
     public function __invoke(SupportFormRequest $request)
     {
-        event(new SupportFormSubmittedEvent($request));
+        event(SupportFormSubmittedEvent::fromRequest($request));
 
         return view('support-form::success');
     }

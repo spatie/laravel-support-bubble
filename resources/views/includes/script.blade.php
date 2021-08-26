@@ -1,12 +1,7 @@
 <script>
-    /**
-     * Add JS to:
-     * - [x] show inner form on click of button
-     * - handle submission of inner form
-     * - after submission, replace inner-form with response of HandleSupportFormSubmissionController
-     */
-
     function bootstrapSupportForm(element) {
+        element.style.display = 'flex';
+
         const container = element.querySelector('.spatie-support-form__container');
         const formContainer = element.querySelector('.spatie-support-form__form');
         const responseContainer = element.querySelector('.spatie-support-form__response');
@@ -41,17 +36,22 @@
                         responseContainer.innerHTML = html;
                         responseContainer.style.display = 'flex';
                         formContainer.style.display = 'none';
-                        errorMessage.styles.display = 'none';
+                        errorMessage.style.display = 'none';
                     })
                     .catch(async errorResponse => {
+                        console.error(errorResponse);
+
                         const response = await errorResponse.json();
-                        errorMessage.styles.display = 'block';
+
+                        errorMessage.style.display = 'block';
                         errorMessage.innerHTML = response.message || 'Something went wrong.';
                     });
             });
     }
 
-    document
-        .querySelectorAll('.spatie-support-form')
-        .forEach(form => bootstrapSupportForm(form));
+    window.addEventListener('load', () => {
+        document
+            .querySelectorAll('.spatie-support-form')
+            .forEach(form => bootstrapSupportForm(form));
+    });
 </script>

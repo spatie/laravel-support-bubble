@@ -3,7 +3,7 @@
     $position .= $positionX === 'right' ? 'right-0 items-end ' : 'left-0';
 @endphp
 
-<div class="spatie-support-form fixed {{$position}} z-10 flex flex-col m-4 gap-3 w-64">
+<div class="spatie-support-form fixed {{$position}} z-10 flex-col m-4 gap-3 w-64" style="display: none;">
     <div class="spatie-support-form__container bg-white shadow-xl border border-gray-300 rounded p-2" style="display: none">
         <div class="spatie-support-form__form">
             @include('support-form::includes.form', compact('email'))

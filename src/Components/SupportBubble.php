@@ -16,12 +16,15 @@ class SupportBubble extends Component
 
     public string $email;
 
+    public string $name;
+
     public function __construct(string $position)
     {
         $this->positionY = Str::contains($position, 'top') ? 'top' : 'bottom';
         $this->positionX = Str::contains($position, 'left') ? 'left' : 'right';
         $this->formAction = route(config('support-form.form_action_route'));
-        $this->email = config('support-form.prefill_email_from_request') ? (optional(request()->user())->email ?? '') : '';
+        $this->email = config('support-form.prefill_logged_in_user') ? (optional(request()->user())->email ?? '') : '';
+        $this->name = config('support-form.prefill_logged_in_user') ? (optional(request()->user())->name ?? '') : '';
     }
 
     /**
