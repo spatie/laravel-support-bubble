@@ -29,4 +29,12 @@ return [
      * will e-mail any chat bubble responses to this address.
      */
     'mail_to' => null,
+
+    /*
+     * A mail will be sent to `mail_to` as if it was sent by the
+     * user details submitted in the support bubble.
+     *
+     * This is useful for sending mails directly to a support desk.
+     */
+    'impersonate_mail_from_user' => false,
 ];

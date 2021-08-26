@@ -37,6 +37,13 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
 
     public function toMail($notifiable): MailMessage
     {
+        if (config('support-bubble.impersonate_mail_from_user')) {
+            return (new MailMessage())
+                ->from($this->email, $this->name)
+                ->subject($this->subject)
+                ->line($this->message);
+        }
+
         return (new MailMessage())
             ->subject("New bubble message from {$this->name}: {$this->subject}")
             ->greeting("\"{$this->subject}\"")
