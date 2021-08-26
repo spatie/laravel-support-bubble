@@ -21,6 +21,7 @@ class SupportBubbleServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-support-bubble')
             ->hasConfigFile()
+            ->hasTranslations()
             ->hasViews();
     }
 
