@@ -5,7 +5,6 @@ return [
     /*
      * Use this setting to completely disable the support bubble.
      */
-
     'enabled' => env('SUPPORT_BUBBLE_ENABLED', true),
 
     /*
