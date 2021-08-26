@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Route;
+use Spatie\Honeypot\ProtectAgainstSpam;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Spatie\SupportBubble\Components\SupportBubble;
@@ -33,7 +34,8 @@ class SupportBubbleServiceProvider extends PackageServiceProvider
 
         Route::macro('supportBubble', function (string $url = '') {
             Route::post("{$url}/support-bubble", HandleSupportBubbleSubmissionController::class)
-                ->name(config('support-bubble.form_action_route'));
+                ->name(config('support-bubble.form_action_route'))
+                ->middleware(ProtectAgainstSpam::class);
         });
 
         if (config('support-bubble.mail_to')) {

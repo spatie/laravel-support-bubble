@@ -9,24 +9,16 @@
 
         element.querySelector('.spatie-support-bubble__button button')
             .addEventListener('click', () => {
-                const opening = container.style.display === 'none';
+                const opening = container.classList.contains('opacity-0');
 
                 if (opening) {
-                    container.style.display = 'flex';
                     responseContainer.style.display = 'none';
                     formContainer.style.display = 'block';
-
-                    setTimeout(() => {
-                        container.classList.remove('translate-x-full', 'opacity-0');
-                        container.classList.add('translate-x-0', 'opacity-100');
-                    }, 10);
+                    container.classList.remove('translate-x-full', 'opacity-0');
+                    container.classList.add('translate-x-0', 'opacity-100');
                 } else {
                     container.classList.remove('translate-x-0', 'opacity-100');
                     container.classList.add('translate-x-full', 'opacity-0');
-
-                    setTimeout(() => {
-                        container.style.display = 'none';
-                    }, 160);
                 }
             });
 

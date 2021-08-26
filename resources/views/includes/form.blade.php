@@ -9,6 +9,8 @@
 
     <p class="spatie-support-bubble__error | text-red-600" style="display: none"></p>
 
+    <x-honeypot />
+
     <label for="support-bubble-name" class="font-medium {{ $name ? 'hidden' : '' }}">
         Your name
         <input type="text" name="name" id="support-bubble-name" required value="{{ $name }}" class="input text-base">
