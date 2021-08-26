@@ -16,6 +16,8 @@ Using this package you can quickly add a chat bubble that opens a support form o
 
 You can see it in action below and on [Flare](https://flareapp.io/)!
 
+![support](https://user-images.githubusercontent.com/6287961/130990961-c8e9bf83-3dfc-4c38-a1a5-e1037938c4e5.gif)
+
 ## Support us
 
 [<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-support-bubble.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-support-bubble)
