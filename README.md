@@ -192,7 +192,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 If you need more options for your support bubble, consider using one of these:
 
 - [Freddy Feedback](https://freddyfeedback.com)
-- [Beadcon by Help Scout](https://www.helpscout.com)
+- [Beacon by Help Scout](https://www.helpscout.com)
 
 ## License
 
