@@ -4,7 +4,7 @@
     class="flex flex-col gap-4"
 >
     <p class="text-base">
-        Contact Flare support for any questions, suggestions or bugs.<br/>We're available on all weekdays.
+        Contact Flare support for any questions, suggestions or bugs.<br/>We're available on all weekdays and usually reply within one working day.
     </p>
 
     <p class="spatie-support-bubble__error | text-red-600" style="display: none"></p>
