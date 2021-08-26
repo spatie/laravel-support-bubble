@@ -2,14 +2,14 @@
 
 use Illuminate\Notifications\AnonymousNotifiable;
 use Illuminate\Support\Facades\Notification;
-use Spatie\SupportBubble\Notifications\BubbleResponseNotification;
 use function Pest\Laravel\post;
+use Spatie\SupportBubble\Notifications\BubbleResponseNotification;
 
-beforeEach(function() {
+beforeEach(function () {
     $this->formValues = formValues();
 });
 
-it('will not send a mail notification by default', function() {
+it('will not send a mail notification by default', function () {
     Notification::fake();
 
     post(route('supportBubble.submit'), $this->formValues)->assertSuccessful();
@@ -17,7 +17,7 @@ it('will not send a mail notification by default', function() {
     Notification::assertNothingSent();
 });
 
-it('can be configured to send a notification', function() {
+it('can be configured to send a notification', function () {
     config()->set('support-bubble.mail_to', 'jane@example.com');
     refreshServiceProvider();
 
@@ -25,7 +25,7 @@ it('can be configured to send a notification', function() {
 
     post(route('supportBubble.submit'), $this->formValues)->assertSuccessful();
 
-    Notification::assertSentTo(new AnonymousNotifiable(), function(BubbleResponseNotification $notification) {
+    Notification::assertSentTo(new AnonymousNotifiable(), function (BubbleResponseNotification $notification) {
         expect($notification)
             ->name->toEqual($this->formValues['name'])
             ->subject->toEqual($this->formValues['subject'])
@@ -43,5 +43,3 @@ it('can be rendered', function() {
 
     expect($html)->toContain('left a new message');
 });
-
-
