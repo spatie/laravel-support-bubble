@@ -18,7 +18,7 @@ class SupportBubbleComponent extends Component
         $this->formAction = route(config('support-bubble.form_action_route'));
 
         if (config('support-bubble.prefill_logged_in_user')) {
-            $user = request()->user();
+            $user = auth()->user();
 
             $this->email = $user?->email ?? '';
             $this->name = $user?->name ?? '';
