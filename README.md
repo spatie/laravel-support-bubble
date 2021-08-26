@@ -16,7 +16,7 @@ Using this package you can quickly add a chat bubble that opens a support form o
 
 You can see it in action below and on [Flare](https://flareapp.io/)!
 
-![support](https://user-images.githubusercontent.com/6287961/130990961-c8e9bf83-3dfc-4c38-a1a5-e1037938c4e5.gif)
+![support-small](https://user-images.githubusercontent.com/6287961/130991221-831879ee-1a90-46f3-a92d-af0e7a30d022.gif)
 
 ## Support us
 
