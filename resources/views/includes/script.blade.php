@@ -9,13 +9,12 @@
 
         element.querySelector('.spatie-support-bubble__button button')
             .addEventListener('click', () => {
-                responseContainer.style.display = 'none';
-                formContainer.style.display = 'block';
-
                 const opening = container.style.display === 'none';
 
                 if (opening) {
                     container.style.display = 'flex';
+                    responseContainer.style.display = 'none';
+                    formContainer.style.display = 'block';
 
                     setTimeout(() => {
                         container.classList.remove('translate-x-full', 'opacity-0');
