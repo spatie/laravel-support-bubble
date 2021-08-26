@@ -7,7 +7,8 @@
         const responseContainer = element.querySelector('.spatie-support-bubble__response');
         const errorMessage = element.querySelector('.spatie-support-bubble__error');
 
-        element.querySelector('.spatie-support-bubble__button button')
+        element
+            .querySelector('.spatie-support-bubble__button button')
             .addEventListener('click', () => {
                 const opening = container.classList.contains('opacity-0');
 
@@ -22,7 +23,8 @@
                 }
             });
 
-        element.querySelector('.spatie-support-bubble__form form')
+        element
+            .querySelector('.spatie-support-bubble__form form')
             .addEventListener('submit', (event) => {
                 event.preventDefault();
                 const formData = new FormData(event.target)
