@@ -2,7 +2,6 @@
 
 namespace Spatie\SupportForm\Components;
 
-use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\View\Component;
 use Str;
 

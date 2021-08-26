@@ -2,7 +2,6 @@
 
 namespace Spatie\SupportForm\Events;
 
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Spatie\SupportForm\Http\Requests\SupportFormRequest;
 
 class SupportFormSubmittedEvent
@@ -12,8 +11,7 @@ class SupportFormSubmittedEvent
         public string $message,
         public string $email,
         public string $name,
-    )
-    {
+    ) {
     }
 
     public static function fromRequest(SupportFormRequest $request): self

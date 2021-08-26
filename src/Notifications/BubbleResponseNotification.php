@@ -17,8 +17,7 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
         public string $message,
         public string $email,
         public string $name,
-    )
-    {
+    ) {
     }
 
     public static function fromEvent(SupportFormSubmittedEvent $event): self
