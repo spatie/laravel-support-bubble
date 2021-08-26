@@ -1,32 +1,34 @@
-<div class="support-bubble-inner">
-    <p class="pb-4">
-        Contact Flare support for any questions, suggestions or bugs. We're available on all weekdays.
+<form
+    method="post"
+    action="{{ route(config('support-bubble.form_action_route')) }}"
+    class="flex flex-col gap-4"
+>
+    <p>
+        Contact Flare support for any questions, suggestions or bugs.<br/>We're available on all weekdays.
     </p>
 
-    <p class="spatie-support-bubble__error pb-4 text-red-600" style="display: none"></p>
+    <p class="spatie-support-bubble__error | text-red-600" style="display: none"></p>
 
-    <form method="post" action="{{ route(config('support-bubble.form_action_route')) }}"
-          class="flex flex-col gap-3">
-        <label for="name" class="{{ $name ? 'hidden' : '' }}">
-            Your name
-            <input type="text" name="name" id="name" required value="{{ $name }}" class="input">
-        </label>
+    <label for="support-bubble-name" class="font-medium {{ $name ? 'hidden' : '' }}">
+        Your name
+        <input type="text" name="name" id="support-bubble-name" required value="{{ $name }}" class="input">
+    </label>
 
-        <label for="email" class="{{ $email ? 'hidden' : '' }}">
-            E-mail address
-            <input type="email" name="email" id="email" required value="{{ $email }}" class="input">
-        </label>
+    <label for="support-bubble-email" class="font-medium {{ $email ? 'hidden' : '' }}">
+        E-mail address
+        <input type="email" name="email" id="support-bubble-email" required value="{{ $email }}"
+               class="input">
+    </label>
 
-        <label for="subject">
-            Subject
-            <input type="text" name="subject" id="subject" required class="input">
-        </label>
+    <label for="support-bubble-subject" class="font-medium">
+        Subject
+        <input type="text" name="subject" id="support-bubble-subject" required class="input">
+    </label>
 
-        <label for="message">
-            How can we help?
-            <textarea name="message" id="message" required class="input"></textarea>
-        </label>
+    <label for="support-bubble-message" class="font-medium">
+        How can we help?
+        <textarea name="message" id="support-bubble-message" rows="4" required class="input"></textarea>
+    </label>
 
-        <button type="submit" class="button">Submit</button>
-    </form>
-</div>
+    <button type="submit" class="button">Submit</button>
+</form>

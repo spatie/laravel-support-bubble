@@ -10,7 +10,7 @@
         element.querySelector('.spatie-support-bubble__button button')
             .addEventListener('click', () => {
                 responseContainer.style.display = 'none';
-                formContainer.style.display = 'flex';
+                formContainer.style.display = 'block';
                 container.style.display = container.style.display === 'flex' ? 'none' : 'flex';
             });
 
