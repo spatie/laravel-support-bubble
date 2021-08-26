@@ -14,10 +14,6 @@ class TestCase extends Orchestra
     {
         parent::setUp();
 
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Spatie\\SupportBubble\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
-
         Route::supportBubble();
     }
 
@@ -27,15 +23,5 @@ class TestCase extends Orchestra
             SupportBubbleServiceProvider::class,
             HoneypotServiceProvider::class,
         ];
-    }
-
-    public function getEnvironmentSetUp($app)
-    {
-        config()->set('database.default', 'testing');
-
-        /*
-        include_once __DIR__.'/../database/migrations/create_laravel-support-bubble_table.php.stub';
-        (new \CreatePackageTable())->up();
-        */
     }
 }
