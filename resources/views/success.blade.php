@@ -1,1 +1,1 @@
-Thank you for your support request. We'll answer you soon.
+Thank you for your message. We usually answer within one working day.
