@@ -13,4 +13,6 @@
     </div>
 </div>
 
-@include('support-bubble::includes.script')
+@once
+    @include('support-bubble::includes.script')
+@endonce
