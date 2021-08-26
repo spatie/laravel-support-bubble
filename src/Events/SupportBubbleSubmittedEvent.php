@@ -7,20 +7,20 @@ use Spatie\SupportBubble\Http\Requests\SupportBubbleRequest;
 class SupportBubbleSubmittedEvent
 {
     public function __construct(
-        public string $subject,
-        public string $message,
-        public string $email,
-        public string $name,
+        public string|null $subject,
+        public string|null $message,
+        public string|null $email,
+        public string|null $name,
     ) {
     }
 
     public static function fromRequest(SupportBubbleRequest $request): self
     {
         return new static(
-            $request->subject,
-            $request->message,
-            $request->email,
-            $request->name,
+            $request->get('subject'),
+            $request->get('message'),
+            $request->get('email'),
+            $request->get('name'),
         );
     }
 }

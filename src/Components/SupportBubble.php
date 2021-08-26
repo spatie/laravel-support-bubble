@@ -13,7 +13,7 @@ class SupportBubble extends Component
 
     public string $name;
 
-    public function __construct(string $position)
+    public function __construct()
     {
         $this->formAction = route(config('support-bubble.form_action_route'));
         $this->email = config('support-bubble.prefill_logged_in_user') ? (optional(request()->user())->email ?? '') : '';
@@ -23,5 +23,10 @@ class SupportBubble extends Component
     public function render(): View
     {
         return view("support-bubble::components.support-bubble");
+    }
+
+    public function hasField(string $field): bool
+    {
+        return config("support-bubble.fields.{$field}", false);
     }
 }

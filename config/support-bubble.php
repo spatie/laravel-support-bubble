@@ -12,14 +12,11 @@ return [
      */
     'form_action_route' => 'supportBubble.submit',
 
-    /*
-     * Form submission rules
-     */
-    'rules' => [
-        'name' => 'required',
-        'email' => 'required|email',
-        'subject' => 'required',
-        'message' => 'required',
+    'fields' => [
+        'name' => true,
+        'email' => true,
+        'subject' => true,
+        'message' => true,
     ],
 
     'prefill_logged_in_user' => true,
