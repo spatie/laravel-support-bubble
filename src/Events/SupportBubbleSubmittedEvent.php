@@ -11,6 +11,7 @@ class SupportBubbleSubmittedEvent
         public string | null $message,
         public string | null $email,
         public string | null $name,
+        public SupportBubbleRequest $request
     ) {
     }
 
@@ -21,6 +22,7 @@ class SupportBubbleSubmittedEvent
             $request->get('message'),
             $request->get('email'),
             $request->get('name'),
+            $request,
         );
     }
 }

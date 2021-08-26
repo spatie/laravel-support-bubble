@@ -5,6 +5,7 @@ namespace Spatie\SupportBubble\Tests;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Route;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Spatie\Honeypot\HoneypotServiceProvider;
 use Spatie\SupportBubble\SupportBubbleServiceProvider;
 
 class TestCase extends Orchestra
@@ -17,13 +18,14 @@ class TestCase extends Orchestra
             fn (string $modelName) => 'Spatie\\SupportBubble\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
 
-        Route::SupportBubble();
+        Route::supportBubble();
     }
 
     protected function getPackageProviders($app)
     {
         return [
             SupportBubbleServiceProvider::class,
+            HoneypotServiceProvider::class,
         ];
     }
 
