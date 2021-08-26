@@ -3,10 +3,10 @@
     $position .= $positionX === 'right' ? 'right-0 items-end ' : 'left-0';
 @endphp
 
-<div class="spatie-support-form fixed {{$position}} z-10 flex flex-col m-4 gap-3">
-    <div class="spatie-support-form__container bg-white w-64 shadow-xl border border-gray-300 rounded p-2" style="display: none">
+<div class="spatie-support-form fixed {{$position}} z-10 flex flex-col m-4 gap-3 w-64">
+    <div class="spatie-support-form__container bg-white shadow-xl border border-gray-300 rounded p-2" style="display: none">
         <div class="spatie-support-form__form">
-            @include('support-form::styles.tailwind.includes.form')
+            @include('support-form::includes.form', compact('email'))
         </div>
 
         <div class="spatie-support-form__response" style="display: none">
@@ -14,7 +14,7 @@
     </div>
 
     <div class="spatie-support-form__button">
-        @include('support-form::styles.tailwind.includes.button')
+        @include('support-form::includes.button')
     </div>
 </div>
 

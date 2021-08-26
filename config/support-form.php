@@ -20,10 +20,5 @@ return [
         'text' => 'required',
     ],
 
-    /*
-     * What template style should be used?
-     *
-     * Options: css, tailwind
-     */
-    'template_styling' => 'tailwind'
+    'prefill_email_from_request' => true,
 ];

@@ -2,6 +2,7 @@
 
 namespace Spatie\SupportForm\Components;
 
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\View\Component;
 use Str;
 
@@ -13,11 +14,14 @@ class SupportBubble extends Component
 
     public string $formAction;
 
+    public string $email;
+
     public function __construct(string $position)
     {
         $this->positionY = Str::contains($position, 'top') ? 'top' : 'bottom';
         $this->positionX = Str::contains($position, 'left') ? 'left' : 'right';
         $this->formAction = route(config('support-form.form_action_route'));
+        $this->email = config('support-form.prefill_email_from_request') ? (optional(request()->user())->email ?? '') : '';
     }
 
     /**
@@ -27,8 +31,6 @@ class SupportBubble extends Component
      */
     public function render()
     {
-        $style = config('support-form.template_styling', 'css');
-
-        return view("support-form::styles.{$style}.support-bubble");
+        return view("support-form::components.support-bubble");
     }
 }

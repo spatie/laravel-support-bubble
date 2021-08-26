@@ -10,6 +10,7 @@
         const container = element.querySelector('.spatie-support-form__container');
         const formContainer = element.querySelector('.spatie-support-form__form');
         const responseContainer = element.querySelector('.spatie-support-form__response');
+        const errorMessage = element.querySelector('.spatie-support-form__error');
 
         element.querySelector('.spatie-support-form__button button')
             .addEventListener('click', () => {
@@ -25,15 +26,27 @@
                 const formProps = Object.fromEntries(formData);
 
                 fetch(event.target.action, {
-                    headers: {'Content-Type': 'application/json'},
+                    headers: {'Content-Type': 'application/json', Accept: 'application/json'},
                     body: JSON.stringify(formProps),
                     method: "post"
                 })
-                    .then(response => response.text())
+                    .then(response => {
+                        if (response.status !== 200) throw response;
+
+                        event.target.reset();
+
+                        return response.text();
+                    })
                     .then(html => {
                         responseContainer.innerHTML = html;
                         responseContainer.style.display = 'flex';
                         formContainer.style.display = 'none';
+                        errorMessage.styles.display = 'none';
+                    })
+                    .catch(async errorResponse => {
+                        const response = await errorResponse.json();
+                        errorMessage.styles.display = 'block';
+                        errorMessage.innerHTML = response.message || 'Something went wrong.';
                     });
             });
     }
