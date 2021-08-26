@@ -5,12 +5,7 @@ use function Pest\Laravel\post;
 use Spatie\SupportBubble\Events\SupportBubbleSubmittedEvent;
 
 beforeEach(function () {
-    $this->formValues = [
-        'name' => 'John Doe',
-        'subject' => 'Subject',
-        'email' => 'john@example.com',
-        'message' => 'My question',
-    ];
+    $this->formValues = formValues();
 
     Event::fake();
 });
@@ -46,8 +41,6 @@ it('can disable validation for a field', function (string $name) {
 
     Event::assertDispatched(SupportBubbleSubmittedEvent::class);
 })->with('formFields');
-
-
 
 dataset('formFields', [
     'name',
