@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Event;
 use function Pest\Laravel\post;
 use Spatie\SupportBubble\Events\SupportBubbleSubmittedEvent;
 
-beforeEach(function() {
+beforeEach(function () {
     $this->formValues = [
         'name' => 'John Doe',
         'subject' => 'Subject',
@@ -18,7 +18,7 @@ beforeEach(function() {
 it('can except a support form submission', function () {
     post(route('supportBubble.submit'), $this->formValues)->assertSuccessful();
 
-    Event::assertDispatched(function (SupportBubbleSubmittedEvent $event)  {
+    Event::assertDispatched(function (SupportBubbleSubmittedEvent $event) {
         expect($event->request->validated())->toEqual($this->formValues);
 
         expect($event->request)
