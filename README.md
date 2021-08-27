@@ -1,5 +1,3 @@
-**DO NOT USE YET, PACKAGE IN DEVELOPMENT**
-
 # A non-intrusive support bubble that can be displayed on any page
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-support-bubble.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-support-bubble)
@@ -27,9 +25,7 @@ We invest a lot of resources into creating [best in class open source packages](
 
 We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
 
-## Installation and set-up
-
-### 1. Composer install
+## Installation
 
 You can install the package via composer:
 
@@ -37,19 +33,17 @@ You can install the package via composer:
 composer require spatie/laravel-support-bubble
 ```
 
-### 2. Include TailwindCSS
+#### Include TailwindCSS
 
-The views included in this package all use TailwindCSS classes. We've stuck to the default Tailwind config classes so if you're not already using TailwindCSS, you can easily include it from their CDN:
+The views included in this package all use TailwindCSS classes. We've stuck to the default Tailwind config classes.  If you're not already using TailwindCSS, you can easily include it from their CDN:
 
 ```html
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 ```
 
-### 3. Add the support bubble component
+#### Add the component to your view
 
-After installing the package, you need to add the `<x-support-bubble />` component in your relevant view files. If you want it to show up on all pages you can add it to your `layout.blade.php` file.
-
-### 4. Register routes
+After installing the package, you need to add the `<x-support-bubble />` Blade component in your relevant view files. If you want it to show up on all pages you can add it to your `layout.blade.php` file.
 
 Next, you need to register the support form's route. Add the following macro in your `routes/api.php` file:
 
@@ -57,16 +51,38 @@ Next, you need to register the support form's route. Add the following macro in 
 Route::supportBubble();
 ```
 
+This will register a route at `/support-form`
+
 ⚠️ This package is not using CSRF tokens so make sure you add the route macro to your apps API routes or add an exclusion in the `VerifyCsrfToken` middleware.
 
-### 5. Configure message destination
+```php
+// in app/Http/Middleware/VerifyCsrfToken.php
 
-Finally, you need to decide where you want to send the support bubble's messages to. Following options are available:
+namespace App\Http\Middleware;
 
-- e-mail: publish the config file and enter your email in `mail_to`
-- diy: register an [event listener](https://laravel.com/docs/8.x/events#defining-listeners) for the `Spatie\SupportBubble\Events\SupportBubbleSubmittedEvent` and handle it yourself
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as Middleware;
 
-You can publish the config file with:
+class VerifyCsrfToken extends Middleware
+{
+    protected $except = [
+        'support-form',
+        // other entries
+    ];
+    
+    // ...
+}
+```
+
+#### Configure message destination
+
+Finally, you need to decide where you want to send the support bubble's submission to. 
+
+Out of the box, the package can mail the submissions to a given email address. To go this route, publish the config file and enter the email in `mail_to`.
+
+Alternately, you can register an [event listener](https://laravel.com/docs/8.x/events#defining-listeners) to listen for the `Spatie\SupportBubble\Events\SupportBubbleSubmittedEvent` event and handle it yourself. This event has submitted form values as public properties.
+
+The config file can be published with:
+
 ```bash
 php artisan vendor:publish --provider="Spatie\LaravelSupportBubble\LaravelSupportBubbleServiceProvider" --tag="support-bubble-config"
 ```
@@ -123,7 +139,7 @@ return [
 ];
 ```
 
-## Customisations
+## Customization options
 
 The support bubble should look pretty good out of the box. However, we've documented a couple ways to customize labels, text, views and functionality.
 

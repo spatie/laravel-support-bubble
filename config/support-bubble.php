@@ -32,10 +32,9 @@ return [
     'prefill_logged_in_user' => true,
 
     /*
-     * If configured, we'll set up an event listener that will
-     * send any chat bubble responses to this e-mail address.
+     * We'll send any chat bubble responses to this e-mail address.
      *
-     * Default: null
+     * Set this to
      */
     'mail_to' => null,
 
