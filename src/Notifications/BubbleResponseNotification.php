@@ -26,7 +26,7 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
     public static function fromEvent(SupportBubbleSubmittedEvent $event): self
     {
         return new self(
-            $event->subject ?? 'No subject',
+            $event->subject ?? 'Support bubble message',
             $event->message ?? 'No message',
             $event->email ?? config('support-bubble.mail_to') ?? 'No email',
             $event->name ?? 'Unknown',
@@ -48,13 +48,13 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
         if (config('support-bubble.impersonate_mail_from_user')) {
             return (new MailMessage())
                 ->from($this->email, $this->name)
-                ->subject($this->subject ?? 'No subject')
+                ->subject($this->subject)
                 ->line($metadataHtml)
                 ->line($this->message ?? 'No message');
         }
 
         return (new MailMessage())
-            ->subject("New support bubble message from {$this->name}: {$this->subject}")
+            ->subject("Support bubble message from {$this->name}: {$this->subject}")
             ->greeting("\"{$this->subject}\"")
             ->line($metadataHtml)
             ->line("{$this->name} ({$this->email}) left a new message using the chat bubble:")
