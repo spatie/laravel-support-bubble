@@ -16,6 +16,7 @@ class SupportBubbleRequest extends FormRequest
             ],
             'subject' => config('support-bubble.fields.subject') ? 'required' : '',
             'message' => config('support-bubble.fields.message') ? 'required' : '',
+            'url' => ['required', 'url'],
         ];
     }
 }

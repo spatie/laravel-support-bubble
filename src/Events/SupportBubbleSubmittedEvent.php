@@ -2,16 +2,20 @@
 
 namespace Spatie\SupportBubble\Events;
 
+use Illuminate\Http\Request;
 use Spatie\SupportBubble\Http\Requests\SupportBubbleRequest;
 
 class SupportBubbleSubmittedEvent
 {
     public function __construct(
-        public string | null $subject,
-        public string | null $message,
-        public string | null $email,
-        public string | null $name,
-        public SupportBubbleRequest $request
+        public string|null $subject,
+        public string|null $message,
+        public string|null $email,
+        public string|null $name,
+        public string|null $url,
+        public string|null $ip,
+        public string|null $userAgent,
+        public Request $request,
     ) {
     }
 
@@ -22,7 +26,10 @@ class SupportBubbleSubmittedEvent
             $request->get('message'),
             $request->get('email'),
             $request->get('name'),
-            $request,
+            $request->get('url'),
+            $request->ip(),
+            $request->userAgent(),
+            $request
         );
     }
 }

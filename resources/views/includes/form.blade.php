@@ -9,6 +9,8 @@
 
     <x-honeypot />
 
+    <input type="hidden" name="url" value="{{ request()->url() }}">
+
     @if($hasField('name'))
         <label for="support-bubble-name" class="font-medium {{ $name ? 'hidden' : '' }}">
             {!! __('support-bubble::support-bubble.name_label') !!}
