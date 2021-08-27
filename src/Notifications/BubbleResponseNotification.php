@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\HtmlString;
 use Spatie\SupportBubble\Events\SupportBubbleSubmittedEvent;
 
 class BubbleResponseNotification extends Notification implements ShouldQueue
@@ -68,9 +69,9 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
         ];
     }
 
-    protected function getMetadataHtml(): string
+    protected function getMetadataHtml(): HtmlString
     {
-        return <<<HTML
+        $html = <<<HTML
             <dl>
               <dt>Name</dt><dd>{$this->name}</dd>
               <dt>E-mail</dt><dd>{$this->email}</dd>
@@ -80,5 +81,7 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
               <dt>User-agent</dt><dd>{$this->userAgent}</dd>
             </dl>
         HTML;
+
+        return new HtmlString($html);
     }
 }
