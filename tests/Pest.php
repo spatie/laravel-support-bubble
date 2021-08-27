@@ -21,7 +21,7 @@ function formValues(): array
         'subject' => 'Subject',
         'email' => 'john@example.com',
         'message' => 'My question',
-        'url' => 'https://example.com'
+        'url' => 'https://example.com',
     ];
 }
 
