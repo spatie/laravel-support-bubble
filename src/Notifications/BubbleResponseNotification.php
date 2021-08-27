@@ -18,9 +18,9 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
         public string $message,
         public string $email,
         public string $name,
-        public string|null $url,
-        public string|null $ip,
-        public string|null $userAgent,
+        public string | null $url,
+        public string | null $ip,
+        public string | null $userAgent,
     ) {
     }
 
