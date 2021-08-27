@@ -37,7 +37,12 @@ it('can be configured to send a notification', function () {
 });
 
 it('can be rendered', function () {
-    $notification = new BubbleResponseNotification(...formValues());
+    $allValues = formValues() + [
+        'ip' => '1.2.3.4',
+        'userAgent' => 'my-browser',
+    ];
+
+    $notification = new BubbleResponseNotification(...$allValues);
 
     $html = (string)$notification->toMail(new AnonymousNotifiable())->render();
 
