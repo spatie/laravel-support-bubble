@@ -51,7 +51,7 @@ Next, you need to register the support form's route. Add the following macro in 
 Route::supportBubble();
 ```
 
-This will register a route at `/support-form`
+This will register a route at `/support-bubble`
 
 ⚠️ This package is not using CSRF tokens so make sure you add the route macro to your apps API routes or add an exclusion in the `VerifyCsrfToken` middleware.
 
@@ -65,7 +65,7 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as Middleware;
 class VerifyCsrfToken extends Middleware
 {
     protected $except = [
-        'support-form',
+        'support-bubble',
         // other entries
     ];
     
