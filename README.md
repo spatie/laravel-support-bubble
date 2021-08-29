@@ -84,7 +84,7 @@ Alternately, you can register an [event listener](https://laravel.com/docs/8.x/e
 The config file can be published with:
 
 ```bash
-php artisan vendor:publish --provider="Spatie\LaravelSupportBubble\LaravelSupportBubbleServiceProvider" --tag="support-bubble-config"
+php artisan vendor:publish --provider="Spatie\SupportBubble\SupportBubbleServiceProvider" --tag="support-bubble-config"
 ```
 
 These are the default contents of the published config file:
