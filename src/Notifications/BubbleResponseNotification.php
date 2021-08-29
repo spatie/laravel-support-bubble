@@ -59,14 +59,7 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
             ->greeting("\"{$this->subject}\"")
             ->line($metadataHtml)
             ->line("{$this->name} ({$this->email}) left a new message using the chat bubble:")
-            ->line("<blockquote>{$this->message}</blockquote>");
-    }
-
-    public function toArray($notifiable): array
-    {
-        return [
-            //
-        ];
+            ->line(new HtmlString("<blockquote>{$this->message}</blockquote>"));
     }
 
     protected function getMetadataHtml(): HtmlString
@@ -82,6 +75,6 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
             </dl>
         HTML;
 
-        return new HtmlString($html);
+        return new HtmlString(trim($html));
     }
 }
