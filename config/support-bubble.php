@@ -8,6 +8,11 @@ return [
     'enabled' => env('SUPPORT_BUBBLE_ENABLED', true),
 
     /*
+     * Use this setting to completely disable the support bubble.
+     */
+    'tailwind_brand_color' => 'purple-400',
+
+    /*
      * The default route and controller will be registered using this route name.
      * This is a good place to hook in your own route and controller if necessary.
      */
