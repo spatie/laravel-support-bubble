@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 use Spatie\Honeypot\ProtectAgainstSpam;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Spatie\SupportBubble\Components\InputFieldComponent;
 use Spatie\SupportBubble\Components\SupportBubbleComponent;
 use Spatie\SupportBubble\Events\SupportBubbleSubmittedEvent;
 use Spatie\SupportBubble\Http\Controllers\HandleSupportBubbleSubmissionController;
@@ -32,6 +33,7 @@ class SupportBubbleServiceProvider extends PackageServiceProvider
         }
 
         Blade::component('support-bubble', SupportBubbleComponent::class);
+        Blade::component('input-field', 'support-bubble::components.input-field', 'support-bubble');
 
         Route::macro('supportBubble', function (string $url = '') {
             Route::post("{$url}/support-bubble", HandleSupportBubbleSubmissionController::class)

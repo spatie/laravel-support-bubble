@@ -157,6 +157,12 @@ php artisan vendor:publish --provider="Spatie\LaravelSupportBubble\LaravelSuppor
 
 These published files can be found and changed in `resources/lang/vendor/laravel-support-bubble/en/`.
 
+### Customizing styles
+
+You can customize the TailwindCSS classes used for the bubble pop-up, input fields and submit button by changing the `support-bubble.class` config keys. This is the ideal place to change the bubble's default purple color or use your own `.input` or `.button` classes.
+
+You you're looking to change any more advanced styles, keep reading to learn how to publish and customize the Blade views used in the support bubble component.
+ 
 ### Customizing views
 
 You can publish and change all views (including the JavaScript code) in this package:

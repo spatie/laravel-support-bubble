@@ -8,11 +8,6 @@ return [
     'enabled' => env('SUPPORT_BUBBLE_ENABLED', true),
 
     /*
-     * Use this setting to completely disable the support bubble.
-     */
-    'tailwind_brand_color' => 'purple-400',
-
-    /*
      * The default route and controller will be registered using this route name.
      * This is a good place to hook in your own route and controller if necessary.
      */
@@ -51,4 +46,13 @@ return [
      * This is useful when sending mails directly to a support desk.
      */
     'impersonate_mail_from_user' => false,
+
+    /*
+     * The TailwindCSS classes used on a couple of key components.
+     */
+    'classes' => [
+        'bubble' => 'hidden sm:block | bg-purple-400 rounded-full shadow-lg w-14 h-14 text-white p-4',
+        'input' => 'bg-gray-100 border border-gray-200 w-full max-w-full p-2 rounded-sm shadow-input text-gray-800 text-base',
+        'button' => 'inline-flex place-center px-4 py-3 h-10 border-0 bg-purple-500 hover:bg-purple-600 active:bg-purple-600 overflow-hidden rounded-sm text-white leading-none no-underline',
+    ],
 ];
