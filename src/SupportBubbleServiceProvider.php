@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Route;
 use Spatie\Honeypot\ProtectAgainstSpam;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Spatie\SupportBubble\Components\InputFieldComponent;
 use Spatie\SupportBubble\Components\SupportBubbleComponent;
 use Spatie\SupportBubble\Events\SupportBubbleSubmittedEvent;
 use Spatie\SupportBubble\Http\Controllers\HandleSupportBubbleSubmissionController;
