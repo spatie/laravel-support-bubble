@@ -67,12 +67,12 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
         $html = <<<HTML
         <h3>Meta</h3>
             <ul>
-              <li><strong>Name</strong>:{$this->name}</li>
-              <li><strong>E-mail</strong>:{$this->email}</li>
-              <li><strong>Subject</strong>:{$this->subject}</li>
-              <li><strong>URL</strong>:{$this->url}</li>
-              <li><strong>IP-address</strong>:{$this->ip}</li>
-              <li><strong>User-agent</strong>:-agent{$this->userAgent}</li>
+              <li><strong>Name</strong>: {$this->name}</li>
+              <li><strong>E-mail</strong>: {$this->email}</li>
+              <li><strong>Subject</strong>: {$this->subject}</li>
+              <li><strong>URL</strong>: {$this->url}</li>
+              <li><strong>IP-address</strong>: {$this->ip}</li>
+              <li><strong>User-agent</strong>: {$this->userAgent}</li>
             </ul>
         HTML;
 
