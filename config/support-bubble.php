@@ -49,6 +49,9 @@ return [
 
     /*
      * The TailwindCSS classes used on a couple of key components.
+     *
+     * To customize the components further, you can publish
+     * the views of this package.
      */
     'classes' => [
         'bubble' => 'hidden sm:block | bg-purple-400 rounded-full shadow-lg w-14 h-14 text-white p-4',

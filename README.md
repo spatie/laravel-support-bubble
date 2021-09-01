@@ -90,7 +90,10 @@ php artisan vendor:publish --provider="Spatie\SupportBubble\SupportBubbleService
 These are the default contents of the published config file:
 
 ```php
+<?php
+
 return [
+
     /*
      * Use this setting to completely disable the support bubble.
      */
@@ -121,10 +124,9 @@ return [
     'prefill_logged_in_user' => true,
 
     /*
-     * If configured, we'll set-up an event listener that will
-     * send any chat bubble responses to this e-mail address.
+     * We'll send any chat bubble responses to this e-mail address.
      *
-     * Default: null
+     * Set this to
      */
     'mail_to' => null,
 
@@ -136,6 +138,18 @@ return [
      * This is useful when sending mails directly to a support desk.
      */
     'impersonate_mail_from_user' => false,
+
+    /*
+     * The TailwindCSS classes used on a couple of key components.
+     * 
+     * To customize the components further, you can publish
+     * the views of this package.
+     */
+    'classes' => [
+        'bubble' => 'hidden sm:block | bg-purple-400 rounded-full shadow-lg w-14 h-14 text-white p-4',
+        'input' => 'bg-gray-100 border border-gray-200 w-full max-w-full p-2 rounded-sm shadow-input text-gray-800 text-base',
+        'button' => 'inline-flex place-center px-4 py-3 h-10 border-0 bg-purple-500 hover:bg-purple-600 active:bg-purple-600 overflow-hidden rounded-sm text-white leading-none no-underline',
+    ],
 ];
 ```
 
