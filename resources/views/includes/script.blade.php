@@ -15,6 +15,7 @@
                 if (opening) {
                     responseContainer.style.display = 'none';
                     formContainer.style.display = 'block';
+
                     container.classList.remove('translate-x-full', 'opacity-0');
                     container.classList.add('translate-x-0', 'opacity-100');
                 } else {
