@@ -16,7 +16,7 @@
             :label="__('support-bubble::support-bubble.name_label')"
             name="name"
             :value="$name"
-            :hidden="! is_null($name)"
+            :hidden="! empty($name)"
         />
     @endif
 
@@ -26,7 +26,7 @@
             :label="__('support-bubble::support-bubble.email_label')"
             name="email"
             :value="$email"
-            :hidden="! is_null($email)"
+            :hidden="! empty($email)"
         />
     @endif
 
