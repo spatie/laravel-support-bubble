@@ -50,29 +50,30 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
             return (new MailMessage())
                 ->from($this->email, $this->name)
                 ->subject($this->subject)
-                ->line($metadataHtml)
-                ->line($this->message ?? 'No message');
+                ->line($this->message ?? 'No message')
+                ->line($metadataHtml);
         }
 
         return (new MailMessage())
             ->subject("Support bubble message from {$this->name}: {$this->subject}")
-            ->greeting("\"{$this->subject}\"")
-            ->line($metadataHtml)
+            ->greeting($this->subject)
             ->line("{$this->name} ({$this->email}) left a new message using the chat bubble:")
-            ->line(new HtmlString("<blockquote>{$this->message}</blockquote>"));
+            ->line(new HtmlString("<blockquote>{$this->message}</blockquote>"))
+            ->line($metadataHtml);
     }
 
     protected function getMetadataHtml(): HtmlString
     {
         $html = <<<HTML
-            <dl>
-              <dt>Name</dt><dd>{$this->name}</dd>
-              <dt>E-mail</dt><dd>{$this->email}</dd>
-              <dt>Subject</dt><dd>{$this->subject}</dd>
-              <dt>URL</dt><dd>{$this->url}</dd>
-              <dt>IP address</dt><dd>{$this->ip}</dd>
-              <dt>User-agent</dt><dd>{$this->userAgent}</dd>
-            </dl>
+        <h3>Meta</h3>
+            <ul>
+              <li><strong>Name</strong>:{$this->name}</li>
+              <li><strong>E-mail</strong>:{$this->email}</li>
+              <li><strong>Subject</strong>:{$this->subject}</li>
+              <li><strong>URL</strong>:{$this->url}</li>
+              <li><strong>IP-address</strong>:{$this->ip}</li>
+              <li><strong>User-agent</strong>:-agent{$this->userAgent}</li>
+            </ul>
         HTML;
 
         return new HtmlString(trim($html));
