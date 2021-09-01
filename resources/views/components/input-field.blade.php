@@ -5,7 +5,7 @@ $inputClasses = config('support-bubble.classes.input');
 <label for="support-bubble-{{ $name }}" class="font-medium text-sm {{ $hidden ?? false ? 'hidden' : '' }}">
     {!! $label !!}
 
-    @if($type ?? null === 'textarea')
+    @if(($type ?? null) === 'textarea')
         <textarea
             name="{{ $name }}"
             id="support-bubble-{{ $name }}"
