@@ -151,7 +151,7 @@ It is currently not possible to add new fields to the support bubble's form. You
 If you're just looking to customize the field labels, intro text or success text (after the form submitted), you can publish the package's language files:
 
 ```bash
-php artisan vendor:publish --provider="Spatie\LaravelSupportBubble\LaravelSupportBubbleServiceProvider" --tag=support-bubble-translations
+php artisan vendor:publish --provider="Spatie\SupportBubble\SupportBubbleServiceProvider" --tag=support-bubble-translations
 ```
 
 These published files can be found and changed in `resources/lang/vendor/laravel-support-bubble/en/`.
@@ -167,7 +167,7 @@ You you're looking to change any more advanced styles, keep reading to learn how
 You can publish and change all views (including the JavaScript code) in this package:
 
 ```bash
-php artisan vendor:publish --provider="Spatie\LaravelSupportBubble\LaravelSupportBubbleServiceProvider" --tag=support-bubble-views
+php artisan vendor:publish --provider="Spatie\SupportBubble\SupportBubbleServiceProvider" --tag=support-bubble-views
 ```
 These published views can be found and changed in `resources/views/vendor/laravel-support-bubble/`.
 
