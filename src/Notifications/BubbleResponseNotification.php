@@ -46,16 +46,9 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
     {
         $metadataHtml = $this->getMetadataHtml();
 
-        if (config('support-bubble.impersonate_mail_from_user')) {
-            return (new MailMessage())
-                ->from($this->email, $this->name)
-                ->subject($this->subject)
-                ->line($this->message ?? 'No message')
-                ->line($metadataHtml);
-        }
-
         return (new MailMessage())
             ->subject("Support bubble message from {$this->name}: {$this->subject}")
+            ->replyTo($this->email)
             ->greeting($this->subject)
             ->line("{$this->name} ({$this->email}) left a new message using the chat bubble:")
             ->line(new HtmlString("<blockquote>{$this->message}</blockquote>"))

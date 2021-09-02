@@ -39,15 +39,6 @@ return [
     'mail_to' => null,
 
     /*
-     * We can try to impersonate the user that submitted the support form.
-     * The mail sent to the `mail_to` address will appear as if it came
-     * from the email address that was submitted in the support form.
-     *
-     * This is useful when sending mails directly to a support desk.
-     */
-    'impersonate_mail_from_user' => false,
-
-    /*
      * The TailwindCSS classes used on a couple of key components.
      *
      * To customize the components further, you can publish
