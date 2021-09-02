@@ -27,10 +27,6 @@ class SupportBubbleServiceProvider extends PackageServiceProvider
 
     public function packageBooted()
     {
-        if (! config('support-bubble.enabled')) {
-            return;
-        }
-
         Blade::component('support-bubble', SupportBubbleComponent::class);
         Blade::component('input-field', 'support-bubble::components.input-field', 'support-bubble');
 

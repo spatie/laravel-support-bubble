@@ -93,12 +93,6 @@ These are the default contents of the published config file:
 <?php
 
 return [
-
-    /*
-     * Use this setting to completely disable the support bubble.
-     */
-    'enabled' => env('SUPPORT_BUBBLE_ENABLED', true),
-
     /*
      * The default route and controller will be registered using this route name.
      * This is a good place to hook in your own route and controller if necessary.
