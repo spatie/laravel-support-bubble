@@ -22,3 +22,8 @@ it('can be configured not to use the logged in user', function () {
         ->assertDontSee('john@example.com')
         ->assertDontSee('John Doe');
 });
+
+it('can render the submit button using the defult translation string', function () {
+    test()->blade('<x-support-bubble />')
+        ->assertSee('Submit');
+});
