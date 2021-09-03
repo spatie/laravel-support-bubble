@@ -23,7 +23,6 @@ it('can be configured not to use the logged in user', function () {
         ->assertDontSee('John Doe');
 });
 
-it('can render the submit button using the defult translation string', function () {
-    test()->blade('<x-support-bubble />')
-        ->assertSee('Submit');
-});
+it('can render the submit button using the default translation string')
+    ->blade('<x-support-bubble />')
+    ->assertSee('Submit');
