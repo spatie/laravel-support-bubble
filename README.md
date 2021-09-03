@@ -45,6 +45,17 @@ The views included in this package all use TailwindCSS classes. We've stuck to t
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 ```
 
+If you use Tailwind [Just-in-Time Mode](https://tailwindcss.com/docs/just-in-time-mode) you should add these additional lines into your `tailwind.config.js` file:
+```js
+purge: [
+    './vendor/spatie/laravel-support-bubble/config/**/*.php',
+    './vendor/spatie/laravel-support-bubble/resources/views/**/*.blade.php',
+    // other places
+],
+```
+
+This way Tailwind JIT will build your styles including those properties used for the support bubble.
+
 #### Add the component to your view
 
 After installing the package, you need to add the `<x-support-bubble />` Blade component in your relevant view files. If you want it to show up on all pages you can add it to your `layout.blade.php` file.
