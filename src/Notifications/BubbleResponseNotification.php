@@ -50,7 +50,7 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
             ->subject("Support bubble message from {$this->name}: {$this->subject}")
             ->replyTo($this->email)
             ->greeting($this->subject)
-            ->line("{$this->name} ({$this->email}) left a new message using the chat bubble:")
+            ->line("{$this->who()} left a new message using the chat bubble:")
             ->line(new HtmlString("<blockquote>{$this->message}</blockquote>"))
             ->line($metadataHtml);
     }
@@ -70,5 +70,15 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
         HTML;
 
         return new HtmlString(trim($html));
+    }
+    
+
+    protected function who(): string
+    {
+        if ($this->name == null) {
+            return $this->email;
+        } 
+
+        return $this->name . "(" . $this->email . ")";
     }
 }
