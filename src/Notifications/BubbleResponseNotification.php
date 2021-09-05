@@ -75,10 +75,10 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
 
     protected function who(): string
     {
-        if ($this->name == null) {
+        if (is_null($this->name)) {
             return $this->email;
         } 
 
-        return $this->name . "(" . $this->email . ")";
+        return "{$this->name} ({$this->email})";
     }
 }
