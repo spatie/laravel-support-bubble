@@ -12,15 +12,28 @@
             .addEventListener('click', () => {
                 const opening = container.classList.contains('opacity-0');
 
-                if (opening) {
-                    responseContainer.style.display = 'none';
-                    formContainer.style.display = 'block';
-                    container.classList.remove('translate-x-full', 'opacity-0');
-                    container.classList.add('translate-x-0', 'opacity-100');
-                } else {
-                    container.classList.remove('translate-x-0', 'opacity-100');
-                    container.classList.add('translate-x-full', 'opacity-0');
-                }
+                @if(config('support-bubble.direction') == 'rtl')
+
+                    if (opening) {
+                        responseContainer.style.display = 'none';
+                        formContainer.style.display = 'block';
+                        container.classList.remove('-translate-x-full', 'opacity-0');
+                        container.classList.add('-translate-x-0', 'opacity-100');
+                    } else {
+                        container.classList.remove('-translate-x-0', 'opacity-100');
+                        container.classList.add('-translate-x-full', 'opacity-0');
+                    }
+                    @else
+                    if (opening) {
+                        responseContainer.style.display = 'none';
+                        formContainer.style.display = 'block';
+                        container.classList.remove('translate-x-full', 'opacity-0');
+                        container.classList.add('translate-x-0', 'opacity-100');
+                    } else {
+                        container.classList.remove('translate-x-0', 'opacity-100');
+                        container.classList.add('translate-x-full', 'opacity-0');
+                    }
+                @endif
             });
 
         element

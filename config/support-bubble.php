@@ -43,4 +43,11 @@ return [
         'input' => 'bg-gray-100 border border-gray-200 w-full max-w-full p-2 rounded-sm shadow-input text-gray-800 text-base',
         'button' => 'inline-flex place-center px-4 py-3 h-10 border-0 bg-purple-500 hover:bg-purple-600 active:bg-purple-600 overflow-hidden rounded-sm text-white leading-none no-underline',
     ],
+
+    /**
+     * The positioning of the bubble and the form, change this between rtl and ltr, if you want to use RTL, you must have your layout set to RTL like this 
+     * <html lang="ar-TN" dir="rtl">
+     * By default, the value of this is LTR
+     */
+    'direction' => 'rtl'
 ];
