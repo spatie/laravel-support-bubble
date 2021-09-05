@@ -77,6 +77,6 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
     {
         return is_null($this->name)
             ? $this->email
-            : "{$this->name} ({$this->email});
+            : "{$this->name} ({$this->email})";
     }
 }
