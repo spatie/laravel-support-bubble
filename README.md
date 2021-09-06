@@ -109,12 +109,6 @@ These are the default contents of the published config file:
 
 return [
     /*
-     * The default route and controller will be registered using this route name.
-     * This is a good place to hook in your own route and controller if necessary.
-     */
-    'form_action_route' => 'supportBubble.submit',
-
-    /*
      * Enable or disable fields in the support bubble.
      * Keep in mind that `name` and `email` will be hidden automatically
      * when a logged in user is detected and `prefill_logged_in_user` is set.
@@ -125,13 +119,7 @@ return [
         'subject' => true,
         'message' => true,
     ],
-
-    /*
-     * When set to true we'll use currently logged in user to fill in
-     * the name and email fields. Both fields will also be hidden.
-     */
-    'prefill_logged_in_user' => true,
-
+    
     /*
      * We'll send any chat bubble responses to this e-mail address.
      *
@@ -140,8 +128,14 @@ return [
     'mail_to' => null,
 
     /*
+     * When set to true we'll use currently logged in user to fill in
+     * the name and email fields. Both fields will also be hidden.
+     */
+    'prefill_logged_in_user' => true,
+
+    /*
      * The TailwindCSS classes used on a couple of key components.
-     * 
+     *
      * To customize the components further, you can publish
      * the views of this package.
      */
@@ -159,7 +153,13 @@ return [
      * 
      * By default, the value of this is left-to-right
      */
-    'direction' => 'left-to-right'
+    'direction' => 'left-to-right',
+    
+    /*
+     * The default route and controller will be registered using this route name.
+     * This is a good place to hook in your own route and controller if necessary.
+     */
+    'form_action_route' => 'supportBubble.submit',
 ];
 ```
 

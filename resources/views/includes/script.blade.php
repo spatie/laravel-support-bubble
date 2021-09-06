@@ -2,17 +2,13 @@
     function bootstrapSupportBubble(element) {
         element.style.display = 'flex';
 
-        
-
-
-
-
         const container = element.querySelector('.spatie-support-bubble__container');
         const formContainer = element.querySelector('.spatie-support-bubble__form');
         const responseContainer = element.querySelector('.spatie-support-bubble__response');
         const errorMessage = element.querySelector('.spatie-support-bubble__error');
-        const closedClassList;
-        const openedClassList;
+
+        let closedClassList;
+        let openedClassList;
 
         @if(config('support-bubble.direction') === 'right-to-left')
             closedClassList = ['-translate-x-full', 'opacity-0'];
