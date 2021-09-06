@@ -2,38 +2,41 @@
     function bootstrapSupportBubble(element) {
         element.style.display = 'flex';
 
+        
+
+
+
+
         const container = element.querySelector('.spatie-support-bubble__container');
         const formContainer = element.querySelector('.spatie-support-bubble__form');
         const responseContainer = element.querySelector('.spatie-support-bubble__response');
         const errorMessage = element.querySelector('.spatie-support-bubble__error');
+        const closedClassList;
+        const openedClassList;
+
+        @if(config('support-bubble.direction') === 'right-to-left')
+            closedClassList = ['-translate-x-full', 'opacity-0'];
+            openedClassList = ['-translate-x-0', 'opacity-100'];
+        @else
+            closedClassList = ['translate-x-full', 'opacity-0'];
+            openedClassList = ['translate-x-0', 'opacity-100'];
+        @endif
+
 
         element
             .querySelector('.spatie-support-bubble__button button')
             .addEventListener('click', () => {
                 const opening = container.classList.contains('opacity-0');
 
-                @if(config('support-bubble.direction') == 'rtl')
-
-                    if (opening) {
-                        responseContainer.style.display = 'none';
-                        formContainer.style.display = 'block';
-                        container.classList.remove('-translate-x-full', 'opacity-0');
-                        container.classList.add('-translate-x-0', 'opacity-100');
-                    } else {
-                        container.classList.remove('-translate-x-0', 'opacity-100');
-                        container.classList.add('-translate-x-full', 'opacity-0');
-                    }
-                    @else
-                    if (opening) {
-                        responseContainer.style.display = 'none';
-                        formContainer.style.display = 'block';
-                        container.classList.remove('translate-x-full', 'opacity-0');
-                        container.classList.add('translate-x-0', 'opacity-100');
-                    } else {
-                        container.classList.remove('translate-x-0', 'opacity-100');
-                        container.classList.add('translate-x-full', 'opacity-0');
-                    }
-                @endif
+                if (opening) {
+                    responseContainer.style.display = 'none';
+                    formContainer.style.display = 'block';
+                    container.classList.remove(...closedClassList);
+                    container.classList.add(...openedClassList);
+                } else {
+                    container.classList.remove(...openedClassList);
+                    container.classList.add(...closedClassList);
+                }
             });
 
         element

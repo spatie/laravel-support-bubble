@@ -152,12 +152,14 @@ return [
     ],
     
      /**
-     * The positioning of the bubble and the form, change this between rtl and ltr.
-     * If you want to use RTL(Right to Left), you must have your layout set to RTL like this :
-     * <html lang="ar-TN" dir="rtl">
-     * By default, the value of this is LTR
+     * The positioning of the bubble and the form, change this between right-to-left and left-to-right.
+     * 
+     * If you want to use RTL, you must have your layout set to RTL like this 
+     * <html lang="ar-TN" dir="rtl"> .
+     * 
+     * By default, the value of this is left-to-right
      */
-    'direction' => 'ltr'
+    'direction' => 'left-to-right'
 ];
 ```
 

@@ -9,6 +9,8 @@ class SupportBubbleComponent extends Component
 {
     public string $formAction;
 
+    public string $direction;
+
     public string $email = '';
 
     public string $name = '';
@@ -16,6 +18,8 @@ class SupportBubbleComponent extends Component
     public function __construct()
     {
         $this->formAction = route(config('support-bubble.form_action_route'));
+
+        $this->direction = config('support-bubble.direction');
 
         if (config('support-bubble.prefill_logged_in_user')) {
             $user = auth()->user();
