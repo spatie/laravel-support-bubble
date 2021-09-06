@@ -37,14 +37,28 @@ it('can be configured to send a notification', function () {
 });
 
 it('can be rendered', function () {
-    $allValues = formValues() + [
-        'ip' => '1.2.3.4',
-        'userAgent' => 'my-browser',
-    ];
+    $allValues = formValues([
+            'ip' => '1.2.3.4',
+            'userAgent' => 'my-browser',
+        ]);
 
     $notification = new BubbleResponseNotification(...$allValues);
 
     $html = (string)$notification->toMail(new AnonymousNotifiable())->render();
 
-    expect($html)->toContain('left a new message');
+    expect($html)->toContain('John Doe (john@example.com) left a new message');
+});
+
+it('can render a shorter mail when a name is missing', function () {
+    $allValues = formValues([
+            'name' => null,
+            'ip' => '1.2.3.4',
+            'userAgent' => 'my-browser',
+        ]);
+
+    $notification = new BubbleResponseNotification(...$allValues);
+
+    $html = (string)$notification->toMail(new AnonymousNotifiable())->render();
+
+    expect($html)->toContain('john@example.com left a new message');
 });

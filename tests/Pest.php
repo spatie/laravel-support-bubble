@@ -14,15 +14,15 @@ function logIn(): void
     ]));
 }
 
-function formValues(): array
+function formValues(array $attributes = []): array
 {
-    return [
+    return array_merge([
         'name' => 'John Doe',
         'subject' => 'Subject',
         'email' => 'john@example.com',
         'message' => 'My question',
         'url' => 'https://example.com',
-    ];
+    ], $attributes);
 }
 
 function refreshServiceProvider()
