@@ -71,7 +71,6 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
 
         return new HtmlString(trim($html));
     }
-    
 
     protected function who(): string
     {
