@@ -16,11 +16,11 @@
                     responseContainer.style.display = 'none';
                     formContainer.style.display = 'block';
 
-                    container.classList.remove('translate-x-full', 'opacity-0');
+                    container.classList.remove('translate-x-full', 'opacity-0', 'pointer-events-none');
                     container.classList.add('translate-x-0', 'opacity-100');
                 } else {
                     container.classList.remove('translate-x-0', 'opacity-100');
-                    container.classList.add('translate-x-full', 'opacity-0');
+                    container.classList.add('translate-x-full', 'opacity-0', 'pointer-events-none');
                 }
             });
 
