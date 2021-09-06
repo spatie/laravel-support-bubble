@@ -5,6 +5,7 @@ All notable changes to `laravel-support-bubble` will be documented in this file.
 ## 1.0.3 - 2021-09-06
 
 - fix pointer events on hidden support form
+- don't show missing data in notifications (#11)
 
 ## 1.0.2 - 2021-09-03
 
