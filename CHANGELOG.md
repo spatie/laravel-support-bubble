@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-support-bubble` will be documented in this file.
 
+## 1.1.0 - 2021-09-07
+
+- add RTL Support (#14)
+
 ## 1.0.3 - 2021-09-06
 
 - fix pointer events on hidden support form
