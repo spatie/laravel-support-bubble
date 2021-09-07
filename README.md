@@ -150,6 +150,13 @@ return [
      * This is a good place to hook in your own route and controller if necessary.
      */
     'form_action_route' => 'supportBubble.submit',
+
+     /**
+     * The positioning of the bubble and the form, change this between right-to-left and left-to-right, if you want to use RTL, you must have your layout set to RTL like this 
+     * <html lang="ar-TN" dir="rtl">
+     * By default, the value of this is LTR
+     */
+    'direction' => 'left-to-right',
 ];
 ```
 
