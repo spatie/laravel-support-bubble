@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-support-bubble` will be documented in this file.
 
+## 1.2.1 - 2021-09-07
+
+- add meta view
+
 ## 1.2.0 - 2021-09-07
 
 - add container classes to config
