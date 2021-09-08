@@ -27,7 +27,7 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 
 ## Are you a visual learner?
 
-If [this stream on YouTube](https://www.youtube.com/watch?v=IucDLJI2mvQ), you'll see how to install that package, and how it works under the hood.
+In [this stream on YouTube](https://www.youtube.com/watch?v=IucDLJI2mvQ), you'll see how to install that package, and how it works under the hood.
 
 ## Installation
 
