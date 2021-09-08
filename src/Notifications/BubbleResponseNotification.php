@@ -57,17 +57,14 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
 
     protected function getMetadataHtml(): HtmlString
     {
-        $html = <<<HTML
-        <h3>Meta</h3>
-            <ul>
-              <li><strong>Name</strong>: {$this->name}</li>
-              <li><strong>E-mail</strong>: {$this->email}</li>
-              <li><strong>Subject</strong>: {$this->subject}</li>
-              <li><strong>URL</strong>: {$this->url}</li>
-              <li><strong>IP-address</strong>: {$this->ip}</li>
-              <li><strong>User-agent</strong>: {$this->userAgent}</li>
-            </ul>
-        HTML;
+        $html = view('support-bubble::mail.meta', [
+            'name' => $this->name,
+            'email' => $this->email,
+            'subject' => $this->subject,
+            'url' => $this->url,
+            'ip' => $this->ip,
+            'userAgent' => $this->userAgent,
+        ])->render();
 
         return new HtmlString(trim($html));
     }
