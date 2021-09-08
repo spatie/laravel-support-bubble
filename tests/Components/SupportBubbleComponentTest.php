@@ -21,3 +21,14 @@ it('can be configured not to use the logged in user', function () {
         ->assertDontSee('john@example.com')
         ->assertDontSee('John Doe');
 });
+
+it('can render the submit button using the default translation string')
+    ->blade('<x-support-bubble />')
+    ->assertSee('Submit');
+
+it('can be renderd using right-to-left in the correct place', function () {
+    config()->set('support-bubble.direction', 'right-to-left');
+    test()->blade('<x-support-bubble />')
+    ->assertSee('spatie-support-bubble')
+    ->assertSee('-translate-x-full');
+});

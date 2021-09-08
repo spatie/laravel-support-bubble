@@ -7,6 +7,14 @@
         const responseContainer = element.querySelector('.spatie-support-bubble__response');
         const errorMessage = element.querySelector('.spatie-support-bubble__error');
 
+        let fullTranslateClass = 'translate-x-full';
+        let zeroTranslateClass = 'translate-x-0';
+
+        @if(config('support-bubble.direction') === 'right-to-left')
+            fullTranslateClass = "-"+fullTranslate;
+            zeroTranslateClass = "-"+zeroTranslate;
+        @endif
+
         element
             .querySelector('.spatie-support-bubble__button button')
             .addEventListener('click', () => {
@@ -15,11 +23,12 @@
                 if (opening) {
                     responseContainer.style.display = 'none';
                     formContainer.style.display = 'block';
-                    container.classList.remove('translate-x-full', 'opacity-0');
-                    container.classList.add('translate-x-0', 'opacity-100');
+                    
+                    container.classList.remove(fullTranslateClass, 'opacity-0');
+                    container.classList.add(zeroTranslateClass, 'opacity-100');
                 } else {
-                    container.classList.remove('translate-x-0', 'opacity-100');
-                    container.classList.add('translate-x-full', 'opacity-0');
+                    container.classList.remove(zeroTranslateClass, 'opacity-100');
+                    container.classList.add(fullTranslateClass, 'opacity-0');
                 }
             });
 

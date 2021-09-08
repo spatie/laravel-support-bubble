@@ -17,7 +17,7 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
         public string $subject,
         public string $message,
         public string $email,
-        public string $name,
+        public string | null $name,
         public string | null $url,
         public string | null $ip,
         public string | null $userAgent,
@@ -30,7 +30,7 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
             $event->subject ?? 'Support bubble message',
             $event->message ?? 'No message',
             $event->email ?? config('support-bubble.mail_to') ?? 'No email',
-            $event->name ?? 'Unknown',
+            $event->name,
             $event->url ?? 'Unknown',
             $event->ip ?? 'Unknown',
             $event->userAgent ?? 'Unknown',
@@ -50,7 +50,7 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
             ->subject("Support bubble message from {$this->name}: {$this->subject}")
             ->replyTo($this->email)
             ->greeting($this->subject)
-            ->line("{$this->name} ({$this->email}) left a new message using the chat bubble:")
+            ->line("{$this->submitter()} left a new message using the chat bubble:")
             ->line(new HtmlString("<blockquote>{$this->message}</blockquote>"))
             ->line($metadataHtml);
     }
@@ -67,5 +67,12 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
         ])->render();
 
         return new HtmlString(trim($html));
+    }
+
+    protected function submitter(): string
+    {
+        return is_null($this->name)
+            ? $this->email
+            : "{$this->name} ({$this->email})";
     }
 }

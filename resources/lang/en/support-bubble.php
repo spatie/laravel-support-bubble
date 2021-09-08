@@ -9,4 +9,5 @@ return [
     'email_label' => 'E-mail',
     'subject_label' => 'Subject',
     'message_label' => 'How can we help?',
+    'submit_label' => 'Submit',
 ];

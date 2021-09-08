@@ -25,6 +25,10 @@ We invest a lot of resources into creating [best in class open source packages](
 
 We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
 
+## Are you a visual learner?
+
+If [this stream on YouTube](https://www.youtube.com/watch?v=IucDLJI2mvQ), you'll see how to install that package, and how it works under the hood.
+
 ## Installation
 
 You can install the package via composer:
@@ -40,6 +44,17 @@ The views included in this package all use TailwindCSS classes. We've stuck to t
 ```html
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 ```
+
+If you use Tailwind [Just-in-Time Mode](https://tailwindcss.com/docs/just-in-time-mode) you should add these additional lines into your `tailwind.config.js` file:
+```js
+purge: [
+    './vendor/spatie/laravel-support-bubble/config/**/*.php',
+    './vendor/spatie/laravel-support-bubble/resources/views/**/*.blade.php',
+    // other places
+],
+```
+
+This way Tailwind JIT will build your styles including those properties used for the support bubble.
 
 #### Add the component to your view
 
@@ -94,12 +109,6 @@ These are the default contents of the published config file:
 
 return [
     /*
-     * The default route and controller will be registered using this route name.
-     * This is a good place to hook in your own route and controller if necessary.
-     */
-    'form_action_route' => 'supportBubble.submit',
-
-    /*
      * Enable or disable fields in the support bubble.
      * Keep in mind that `name` and `email` will be hidden automatically
      * when a logged in user is detected and `prefill_logged_in_user` is set.
@@ -110,13 +119,7 @@ return [
         'subject' => true,
         'message' => true,
     ],
-
-    /*
-     * When set to true we'll use currently logged in user to fill in
-     * the name and email fields. Both fields will also be hidden.
-     */
-    'prefill_logged_in_user' => true,
-
+    
     /*
      * We'll send any chat bubble responses to this e-mail address.
      *
@@ -125,16 +128,36 @@ return [
     'mail_to' => null,
 
     /*
+     * When set to true we'll use currently logged in user to fill in
+     * the name and email fields. Both fields will also be hidden.
+     */
+    'prefill_logged_in_user' => true,
+
+    /*
      * The TailwindCSS classes used on a couple of key components.
-     * 
+     *
      * To customize the components further, you can publish
      * the views of this package.
      */
     'classes' => [
+        'container' => 'text-base items-end z-10 flex-col m-4 gap-3',
         'bubble' => 'hidden sm:block | bg-purple-400 rounded-full shadow-lg w-14 h-14 text-white p-4',
         'input' => 'bg-gray-100 border border-gray-200 w-full max-w-full p-2 rounded-sm shadow-input text-gray-800 text-base',
         'button' => 'inline-flex place-center px-4 py-3 h-10 border-0 bg-purple-500 hover:bg-purple-600 active:bg-purple-600 overflow-hidden rounded-sm text-white leading-none no-underline',
     ],
+    
+    /*
+     * The default route and controller will be registered using this route name.
+     * This is a good place to hook in your own route and controller if necessary.
+     */
+    'form_action_route' => 'supportBubble.submit',
+
+     /**
+     * The positioning of the bubble and the form, change this between right-to-left and left-to-right, if you want to use RTL, you must have your layout set to RTL like this 
+     * <html lang="ar-TN" dir="rtl">
+     * By default, the value of this is LTR
+     */
+    'direction' => 'left-to-right',
 ];
 ```
 
@@ -151,7 +174,7 @@ It is currently not possible to add new fields to the support bubble's form. You
 If you're just looking to customize the field labels, intro text or success text (after the form submitted), you can publish the package's language files:
 
 ```bash
-php artisan vendor:publish --provider="Spatie\LaravelSupportBubble\LaravelSupportBubbleServiceProvider" --tag=support-bubble-translations
+php artisan vendor:publish --provider="Spatie\SupportBubble\SupportBubbleServiceProvider" --tag=support-bubble-translations
 ```
 
 These published files can be found and changed in `resources/lang/vendor/laravel-support-bubble/en/`.
@@ -167,7 +190,7 @@ You you're looking to change any more advanced styles, keep reading to learn how
 You can publish and change all views (including the JavaScript code) in this package:
 
 ```bash
-php artisan vendor:publish --provider="Spatie\LaravelSupportBubble\LaravelSupportBubbleServiceProvider" --tag=support-bubble-views
+php artisan vendor:publish --provider="Spatie\SupportBubble\SupportBubbleServiceProvider" --tag=support-bubble-views
 ```
 These published views can be found and changed in `resources/views/vendor/laravel-support-bubble/`.
 

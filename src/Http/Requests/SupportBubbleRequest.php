@@ -3,19 +3,20 @@
 namespace Spatie\SupportBubble\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class SupportBubbleRequest extends FormRequest
 {
     public function rules()
     {
         return [
-            'name' => config('support-bubble.fields.name') ? 'required' : '',
+            'name' => Rule::requiredIf(config('support-bubble.fields.name')),
             'email' => [
                 'email',
-                config('support-bubble.fields.email') ? 'required' : '',
+                Rule::requiredIf(config('support-bubble.fields.email')),
             ],
-            'subject' => config('support-bubble.fields.subject') ? 'required' : '',
-            'message' => config('support-bubble.fields.message') ? 'required' : '',
+            'subject' => Rule::requiredIf(config('support-bubble.fields.subject')),
+            'message' => Rule::requiredIf(config('support-bubble.fields.message')),
             'url' => ['required', 'url'],
         ];
     }
