@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-support-bubble` will be documented in this file.
 
+## 1.2.3 - 2021-09-14
+
+- config file improvements
+
 ## 1.2.2 - 2021-09-07
 
 - fix meta view
