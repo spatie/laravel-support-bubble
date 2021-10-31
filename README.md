@@ -13,7 +13,7 @@ Using this package you can quickly add a chat bubble that opens a support form o
 - Easily extendable using custom views, language files and event listeners
 - Honeypot included and set-up to keep spammers at bay
 
-You can see it in action below and on [Flare](https://flareapp.io/)!
+You can see it in action below, on [Flare](https://flareapp.io/) and [Oh Dear](https://ohdear.app)!
 
 ![support-small](https://user-images.githubusercontent.com/6287961/130991221-831879ee-1a90-46f3-a92d-af0e7a30d022.gif)
 
