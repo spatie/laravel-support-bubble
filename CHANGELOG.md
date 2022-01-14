@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-support-bubble` will be documented in this file.
 
+## 1.3.0 - 2022-01-14
+
+- support Laravel 9
+
 ## 1.2.3 - 2021-09-14
 
 - config file improvements
