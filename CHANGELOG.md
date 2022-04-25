@@ -2,6 +2,18 @@
 
 All notable changes to `laravel-support-bubble` will be documented in this file.
 
+## 1.3.1 - 2022-04-25
+
+## What's Changed
+
+- Update support-bubble.blade.php by @colinmackinlay in https://github.com/spatie/laravel-support-bubble/pull/27
+
+## New Contributors
+
+- @colinmackinlay made their first contribution in https://github.com/spatie/laravel-support-bubble/pull/27
+
+**Full Changelog**: https://github.com/spatie/laravel-support-bubble/compare/1.3.0...1.3.1
+
 ## 1.3.0 - 2022-01-14
 
 - support Laravel 9
