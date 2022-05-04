@@ -61,7 +61,13 @@ This way Tailwind JIT will build your styles including those properties used for
 
 #### Add the component to your view
 
-After installing the package, you need to add the `<x-support-bubble />` Blade component in your relevant view files. If you want it to show up on all pages you can add it to your `layout.blade.php` file.
+After installing the package, you need to add this Blade component in your relevant view files:
+
+```html
+<x-support-bubble />
+```
+
+If you want it to show up on all pages you can add it to your `layout.blade.php` file.
 
 Next, you need to register the support form's route. Add the following macro in your `routes/api.php` file:
 
