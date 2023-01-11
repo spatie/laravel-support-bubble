@@ -2,6 +2,19 @@
 
 All notable changes to `laravel-support-bubble` will be documented in this file.
 
+## 1.3.2 - 2023-01-11
+
+### What's Changed
+
+- Accessibility by @Nielsvanpach in https://github.com/spatie/laravel-support-bubble/pull/31
+- Add Dependabot + support for PHP 8.2 by @Nielsvanpach in https://github.com/spatie/laravel-support-bubble/pull/32
+
+### New Contributors
+
+- @Nielsvanpach made their first contribution in https://github.com/spatie/laravel-support-bubble/pull/31
+
+**Full Changelog**: https://github.com/spatie/laravel-support-bubble/compare/1.3.1...1.3.2
+
 ## 1.3.1 - 2022-04-25
 
 ## What's Changed
