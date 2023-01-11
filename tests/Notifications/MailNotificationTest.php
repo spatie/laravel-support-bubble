@@ -2,7 +2,9 @@
 
 use Illuminate\Notifications\AnonymousNotifiable;
 use Illuminate\Support\Facades\Notification;
+
 use function Pest\Laravel\post;
+
 use Spatie\SupportBubble\Notifications\BubbleResponseNotification;
 
 beforeEach(function () {

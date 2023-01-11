@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
+
 use function Pest\Laravel\post;
+
 use Spatie\SupportBubble\Events\SupportBubbleSubmittedEvent;
 
 beforeEach(function () {
