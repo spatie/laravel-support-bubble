@@ -4,11 +4,10 @@ on: push
 
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-latest, windows-latest]
         php: [8.2, 8.1, 8.0]
         laravel: [9.*, 8.*]
         stability: [prefer-lowest, prefer-stable]
@@ -23,7 +22,7 @@ jobs:
           - laravel: 10.*
             php: 8.0
 
-    name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
+    name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }}
 
     steps:
       - name: Checkout code
