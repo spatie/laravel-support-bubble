@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-support-bubble` will be documented in this file.
 
+## 1.3.3 - 2023-01-25
+
+- support L10
+
 ## 1.3.2 - 2023-01-11
 
 ### What's Changed
