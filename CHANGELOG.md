@@ -2,6 +2,16 @@
 
 All notable changes to `laravel-support-bubble` will be documented in this file.
 
+## 1.3.4 - 2023-05-24
+
+### What's Changed
+
+- Improve the formatting of the notification
+- Bump dependabot/fetch-metadata from 1.3.5 to 1.3.6 by @dependabot in https://github.com/spatie/laravel-support-bubble/pull/34
+- Bump dependabot/fetch-metadata from 1.3.6 to 1.4.0 by @dependabot in https://github.com/spatie/laravel-support-bubble/pull/37
+
+**Full Changelog**: https://github.com/spatie/laravel-support-bubble/compare/1.3.3...1.3.4
+
 ## 1.3.3 - 2023-01-25
 
 - support L10
