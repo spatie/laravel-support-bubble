@@ -27,7 +27,7 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
     public static function fromEvent(SupportBubbleSubmittedEvent $event): self
     {
         return new self(
-            $event->subject ?? 'Support bubble message',
+            $event->subject ?? '',
             $event->message ?? 'No message',
             $event->email ?? config('support-bubble.mail_to') ?? 'No email',
             $event->name,
@@ -46,12 +46,14 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
     {
         $metadataHtml = $this->getMetadataHtml();
 
+        $message = nl2br($this->message);
+
         return (new MailMessage())
-            ->subject("Support bubble message from {$this->name}: {$this->subject}")
+            ->subject("Support bubble message from {$this->name}" . ($this->subject ? ": {$this->subject}" : ''))
             ->replyTo($this->email)
             ->greeting($this->subject)
             ->line("{$this->submitter()} left a new message using the chat bubble:")
-            ->line(new HtmlString("<blockquote>{$this->message}</blockquote>"))
+            ->line(new HtmlString("<br/><blockquote>{$message}</blockquote><br/>"))
             ->line($metadataHtml);
     }
 
