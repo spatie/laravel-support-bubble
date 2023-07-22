@@ -189,7 +189,7 @@ These published files can be found and changed in `resources/lang/vendor/laravel
 
 You can customize the TailwindCSS classes used for the bubble pop-up, input fields and submit button by changing the `support-bubble.class` config keys. This is the ideal place to change the bubble's default purple color or use your own `.input` or `.button` classes.
 
-You you're looking to change any more advanced styles, keep reading to learn how to publish and customize the Blade views used in the support bubble component.
+If you're looking to change any more advanced styles, keep reading to learn how to publish and customize the Blade views used in the support bubble component.
  
 ### Customizing views
 
