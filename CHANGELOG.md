@@ -2,6 +2,22 @@
 
 All notable changes to `laravel-support-bubble` will be documented in this file.
 
+## 1.4.0 - 2023-08-11
+
+### What's Changed
+
+- Bump dependabot/fetch-metadata from 1.4.0 to 1.5.1 by @dependabot in https://github.com/spatie/laravel-support-bubble/pull/38
+- Bump dependabot/fetch-metadata from 1.5.1 to 1.6.0 by @dependabot in https://github.com/spatie/laravel-support-bubble/pull/39
+- Update README.md by @yoeriboven in https://github.com/spatie/laravel-support-bubble/pull/41
+- README.md update Tailwind config by @sandervanhooft in https://github.com/spatie/laravel-support-bubble/pull/42
+
+### New Contributors
+
+- @yoeriboven made their first contribution in https://github.com/spatie/laravel-support-bubble/pull/41
+- @sandervanhooft made their first contribution in https://github.com/spatie/laravel-support-bubble/pull/42
+
+**Full Changelog**: https://github.com/spatie/laravel-support-bubble/compare/1.3.4...1.4.0
+
 ## 1.3.4 - 2023-05-24
 
 ### What's Changed
