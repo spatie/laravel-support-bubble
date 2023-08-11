@@ -47,7 +47,7 @@ The views included in this package all use TailwindCSS classes. We've stuck to t
 
 If you use Tailwind [Just-in-Time Mode](https://tailwindcss.com/docs/just-in-time-mode) you should add these additional lines into your `tailwind.config.js` file:
 ```js
-purge: [
+content: [
     './vendor/spatie/laravel-support-bubble/config/**/*.php',
     './vendor/spatie/laravel-support-bubble/resources/views/**/*.blade.php',
     // other places
