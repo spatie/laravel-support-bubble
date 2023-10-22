@@ -18,6 +18,12 @@ return [
      */
     'mail_to' => null,
 
+    /**
+     * This queue will used to dispatch notification.
+     * Leave null to use the default queue.
+     */
+    'queue_name' => null,
+
     /*
      * When set to true use currently logged in user to fill in
      * the name and email fields. Both fields will also be hidden.
