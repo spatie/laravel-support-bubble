@@ -1,8 +1,6 @@
 # A non-intrusive support bubble that can be displayed on any page
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-support-bubble.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-support-bubble)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/laravel-support-bubble/run-tests?label=tests)](https://github.com/spatie/laravel-support-bubble/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/spatie/laravel-support-bubble/Check%20&%20fix%20styling?label=code%20style)](https://github.com/spatie/laravel-support-bubble/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-support-bubble.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-support-bubble)
 
 Using this package you can quickly add a chat bubble that opens a support form on any page. It comes with batteries included:
