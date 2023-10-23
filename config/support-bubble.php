@@ -19,8 +19,8 @@ return [
     'mail_to' => null,
 
     /**
-     * This queue will used to dispatch notification.
-     * Leave null to use the default queue.
+     * This queue will be used when sending out mails.
+     * When set to null, the default queue will be used.
      */
     'queue_name' => null,
 
