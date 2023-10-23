@@ -45,7 +45,10 @@ class SupportBubbleServiceProvider extends PackageServiceProvider
     {
         Event::listen(function (SupportBubbleSubmittedEvent $event) {
             Notification::route('mail', config('support-bubble.mail_to'))
-                ->notify(BubbleResponseNotification::fromEvent($event));
+                ->notify(
+                    BubbleResponseNotification::fromEvent($event)
+                        ->onQueue(config('support-bubble.queue_name'))
+                );
         });
     }
 }

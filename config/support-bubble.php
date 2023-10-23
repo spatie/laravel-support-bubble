@@ -18,6 +18,12 @@ return [
      */
     'mail_to' => null,
 
+    /**
+     * This queue will be used when sending out mails.
+     * When set to null, the default queue will be used.
+     */
+    'queue_name' => null,
+
     /*
      * When set to true use currently logged in user to fill in
      * the name and email fields. Both fields will also be hidden.
