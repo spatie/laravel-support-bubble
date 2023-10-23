@@ -2,6 +2,20 @@
 
 All notable changes to `laravel-support-bubble` will be documented in this file.
 
+## 1.5.0 - 2023-10-23
+
+### What's Changed
+
+- Add configurable queue name by @lloricode in https://github.com/spatie/laravel-support-bubble/pull/45
+- Bump stefanzweifel/git-auto-commit-action from 4 to 5 by @dependabot in https://github.com/spatie/laravel-support-bubble/pull/44
+- Bump actions/checkout from 3 to 4 by @dependabot in https://github.com/spatie/laravel-support-bubble/pull/43
+
+### New Contributors
+
+- @lloricode made their first contribution in https://github.com/spatie/laravel-support-bubble/pull/45
+
+**Full Changelog**: https://github.com/spatie/laravel-support-bubble/compare/1.4.0...1.5.0
+
 ## 1.4.0 - 2023-08-11
 
 ### What's Changed
