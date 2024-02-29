@@ -2,6 +2,18 @@
 
 All notable changes to `laravel-support-bubble` will be documented in this file.
 
+## 1.6.0 - 2024-02-29
+
+### What's Changed
+
+* Laravel 11.x Compatibility by @laravel-shift in https://github.com/spatie/laravel-support-bubble/pull/46
+
+### New Contributors
+
+* @laravel-shift made their first contribution in https://github.com/spatie/laravel-support-bubble/pull/46
+
+**Full Changelog**: https://github.com/spatie/laravel-support-bubble/compare/1.5.0...1.6.0
+
 ## 1.5.0 - 2023-10-23
 
 ### What's Changed
