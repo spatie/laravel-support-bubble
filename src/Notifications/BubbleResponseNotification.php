@@ -49,6 +49,8 @@ class BubbleResponseNotification extends Notification implements ShouldQueue
         $message = nl2br($this->message);
 
         return (new MailMessage())
+            ->mailer(config('support-bubble.mailer') ?? config('mail.default'))
+            ->from(config('support-bubble.mail_from') ?? config('mail.from.address'))
             ->subject("Support bubble message from {$this->name}" . ($this->subject ? ": {$this->subject}" : ''))
             ->replyTo($this->email)
             ->greeting($this->subject)
