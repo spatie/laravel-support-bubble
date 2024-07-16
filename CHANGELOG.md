@@ -2,6 +2,19 @@
 
 All notable changes to `laravel-support-bubble` will be documented in this file.
 
+## 1.7.0 - 2024-07-16
+
+### What's Changed
+
+* Allow configuring mail_from and mailer by @ibnIrshad in https://github.com/spatie/laravel-support-bubble/pull/51
+* Bump dependabot/fetch-metadata from 1.6.0 to 2.1.0 by @dependabot in https://github.com/spatie/laravel-support-bubble/pull/49
+
+### New Contributors
+
+* @ibnIrshad made their first contribution in https://github.com/spatie/laravel-support-bubble/pull/51
+
+**Full Changelog**: https://github.com/spatie/laravel-support-bubble/compare/1.6.0...1.7.0
+
 ## 1.6.0 - 2024-02-29
 
 ### What's Changed
