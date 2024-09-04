@@ -87,14 +87,34 @@ class VerifyCsrfToken extends Middleware
         'support-bubble',
         // other entries
     ];
-    
+
     // ...
 }
 ```
 
+For Laravel 11
+
+```php
+// in bootstrap/app.php
+
+return Application::configure(basePath: dirname(__DIR__))
+	->withRouting(
+		// ...
+	)
+	->withMiddleware(function (Middleware $middleware) {
+		$middleware->validateCsrfTokens(except: [
+			'support-bubble',
+			// other entries
+		]);
+	})
+	->withExceptions(function (Exceptions $exceptions) {
+		// ...
+	})->create();
+```
+
 #### Configure message destination
 
-Finally, you need to decide where you want to send the support bubble's submission to. 
+Finally, you need to decide where you want to send the support bubble's submission to.
 
 Out of the box, the package can mail the submissions to a given email address. To go this route, publish the config file and enter the email in `mail_to`.
 
@@ -123,13 +143,21 @@ return [
         'subject' => true,
         'message' => true,
     ],
-    
+
     /*
      * We'll send any chat bubble responses to this e-mail address.
      *
      * Set this to
      */
     'mail_to' => null,
+    'mail_from' => null, // by default this is config('mail.from.address')
+    'mailer' => null, // by default this is config('mail.default')
+
+	/**
+     * This queue will be used when sending out mails.
+     * When set to null, the default queue will be used.
+     */
+    'queue_name' => null,
 
     /*
      * When set to true we'll use currently logged in user to fill in
@@ -149,7 +177,7 @@ return [
         'input' => 'bg-gray-100 border border-gray-200 w-full max-w-full p-2 rounded-sm shadow-input text-gray-800 text-base',
         'button' => 'inline-flex place-center px-4 py-3 h-10 border-0 bg-purple-500 hover:bg-purple-600 active:bg-purple-600 overflow-hidden rounded-sm text-white leading-none no-underline',
     ],
-    
+
     /*
      * The default route and controller will be registered using this route name.
      * This is a good place to hook in your own route and controller if necessary.
@@ -157,13 +185,17 @@ return [
     'form_action_route' => 'supportBubble.submit',
 
      /**
-     * The positioning of the bubble and the form, change this between right-to-left and left-to-right, if you want to use RTL, you must have your layout set to RTL like this 
+     * The positioning of the bubble and the form, change this between right-to-left and left-to-right, if you want to use RTL, you must have your layout set to RTL like this
      * <html lang="ar-TN" dir="rtl">
      * By default, the value of this is LTR
      */
     'direction' => 'left-to-right',
 ];
 ```
+
+## Queues
+
+By default, the submissions are stored in the database Jobs table.
 
 ## Customization options
 
@@ -188,7 +220,7 @@ These published files can be found and changed in `resources/lang/vendor/laravel
 You can customize the TailwindCSS classes used for the bubble pop-up, input fields and submit button by changing the `support-bubble.class` config keys. This is the ideal place to change the bubble's default purple color or use your own `.input` or `.button` classes.
 
 If you're looking to change any more advanced styles, keep reading to learn how to publish and customize the Blade views used in the support bubble component.
- 
+
 ### Customizing views
 
 You can publish and change all views (including the JavaScript code) in this package:
