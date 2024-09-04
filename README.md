@@ -98,18 +98,18 @@ For Laravel 11
 // in bootstrap/app.php
 
 return Application::configure(basePath: dirname(__DIR__))
-	->withRouting(
-		// ...
-	)
-	->withMiddleware(function (Middleware $middleware) {
-		$middleware->validateCsrfTokens(except: [
-			'support-bubble',
-			// other entries
-		]);
-	})
-	->withExceptions(function (Exceptions $exceptions) {
-		// ...
-	})->create();
+    ->withRouting(
+        // ...
+    )
+    ->withMiddleware(function (Middleware $middleware) {
+        $middleware->validateCsrfTokens(except: [
+            'support-bubble',
+            // other entries
+        ]);
+    })
+    ->withExceptions(function (Exceptions $exceptions) {
+        // ...
+    })->create();
 ```
 
 #### Configure message destination
