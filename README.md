@@ -92,6 +92,14 @@ class VerifyCsrfToken extends Middleware
 }
 ```
 
+In Laravel 11 this is done in `bootstrap/app.php`:
+```
+->withMiddleware(function (Middleware $middleware) {
+        $middleware->validateCsrfTokens(except: [
+			'support-bubble',
+		]);
+    })
+```
 #### Configure message destination
 
 Finally, you need to decide where you want to send the support bubble's submission to. 
