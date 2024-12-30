@@ -2,6 +2,20 @@
 
 All notable changes to `laravel-support-bubble` will be documented in this file.
 
+## 1.8.0 - 2024-12-30
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.1.0 to 2.2.0 by @dependabot in https://github.com/spatie/laravel-support-bubble/pull/52
+* Update README.md for L11 Middleware config by @colinmackinlay in https://github.com/spatie/laravel-support-bubble/pull/54
+* Added IT translation by @marcogermani87 in https://github.com/spatie/laravel-support-bubble/pull/55
+
+### New Contributors
+
+* @marcogermani87 made their first contribution in https://github.com/spatie/laravel-support-bubble/pull/55
+
+**Full Changelog**: https://github.com/spatie/laravel-support-bubble/compare/1.7.0...1.8.0
+
 ## 1.7.0 - 2024-07-16
 
 ### What's Changed
