@@ -2,6 +2,15 @@
 
 All notable changes to `laravel-support-bubble` will be documented in this file.
 
+## 1.8.1 - 2025-02-21
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.2.0 to 2.3.0 by @dependabot in https://github.com/spatie/laravel-support-bubble/pull/56
+* Laravel 12.x Compatibility by @laravel-shift in https://github.com/spatie/laravel-support-bubble/pull/57
+
+**Full Changelog**: https://github.com/spatie/laravel-support-bubble/compare/1.8.0...1.8.1
+
 ## 1.8.0 - 2024-12-30
 
 ### What's Changed
