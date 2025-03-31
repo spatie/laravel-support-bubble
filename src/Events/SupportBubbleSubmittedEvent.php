@@ -15,6 +15,8 @@ class SupportBubbleSubmittedEvent
         public string | null $url,
         public string | null $ip,
         public string | null $userAgent,
+        public string | null $attachmentKey,
+        public string | null $attachmentName,
         public Request $request,
     ) {
     }
@@ -29,6 +31,8 @@ class SupportBubbleSubmittedEvent
             $request->get('url'),
             $request->ip(),
             $request->userAgent(),
+            $request->get('attachment_key'),
+            $request->get('attachment_name'),
             $request
         );
     }

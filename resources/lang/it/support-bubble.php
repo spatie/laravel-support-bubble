@@ -9,5 +9,6 @@ return [
     'email_label' => 'E-mail',
     'subject_label' => 'Soggetto',
     'message_label' => 'Come possiamo aiutarti?',
+    'attachment_label' => 'Allegato',
     'submit_label' => 'Invia',
 ];

@@ -45,5 +45,12 @@
         />
     @endif
 
+    @if($hasField('attachment'))
+        <x-support-bubble::attachment-field
+            :label="__('support-bubble::support-bubble.attachment_label')"
+            name="attachment"
+        />
+    @endif
+
     <button type="submit" class="{{ config('support-bubble.classes.button') }}">{{ __('support-bubble::support-bubble.submit_label') }}</button>
 </form>

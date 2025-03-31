@@ -11,6 +11,7 @@ return [
         'email' => true,
         'subject' => true,
         'message' => true,
+        'attachment' => true,
     ],
 
     /*
@@ -31,6 +32,11 @@ return [
      * the name and email fields. Both fields will also be hidden.
      */
     'prefill_logged_in_user' => true,
+
+    /**
+     * Choose a disk to store your chat bubble attachments.
+     */
+    'attachment_disk' => null, // by default this is config('filesystems.default')
 
     /*
      * The TailwindCSS classes used on a couple of key components.

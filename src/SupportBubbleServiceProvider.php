@@ -11,6 +11,7 @@ use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Spatie\SupportBubble\Components\SupportBubbleComponent;
 use Spatie\SupportBubble\Events\SupportBubbleSubmittedEvent;
+use Spatie\SupportBubble\Http\Controllers\HandleSupportBubbleAttachmentController;
 use Spatie\SupportBubble\Http\Controllers\HandleSupportBubbleSubmissionController;
 use Spatie\SupportBubble\Notifications\BubbleResponseNotification;
 
@@ -28,12 +29,18 @@ class SupportBubbleServiceProvider extends PackageServiceProvider
     public function packageBooted()
     {
         Blade::component('support-bubble', SupportBubbleComponent::class);
+        Blade::component('attachment-field', 'support-bubble::components.attachment-field', 'support-bubble');
         Blade::component('input-field', 'support-bubble::components.input-field', 'support-bubble');
 
         Route::macro('supportBubble', function (string $url = '') {
             Route::post("{$url}/support-bubble", HandleSupportBubbleSubmissionController::class)
                 ->name(config('support-bubble.form_action_route'))
                 ->middleware(ProtectAgainstSpam::class);
+        });
+
+        Route::macro('supportBubbleAttach', function (string $url = '') {
+            Route::post("{$url}/support-bubble/attach", HandleSupportBubbleAttachmentController::class)
+                ->name(config('support-bubble.attach_route'));
         });
 
         if (config('support-bubble.mail_to')) {
