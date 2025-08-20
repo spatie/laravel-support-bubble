@@ -26,8 +26,11 @@
                     responseContainer.style.display = 'none';
                     formContainer.style.display = 'block';
 
-                    chatIcon.style.display = 'none';
-                    closeIcon.style.display = 'inline';
+                     chatIcon.classList.remove("opacity-100");
+                    chatIcon.classList.add("opacity-0");
+
+                    closeIcon.classList.remove("opacity-0");
+                    closeIcon.classList.add("opacity-100");
 
                     container.classList.remove(fullTranslateClass, 'opacity-0');
                     container.classList.add(zeroTranslateClass, 'opacity-100');
@@ -35,8 +38,11 @@
                     container.classList.remove(zeroTranslateClass, 'opacity-100');
                     container.classList.add(fullTranslateClass, 'opacity-0');
 
-                    chatIcon.style.display = 'inline';
-                    closeIcon.style.display = 'none';
+                    closeIcon.classList.remove("opacity-100");
+                    closeIcon.classList.add("opacity-0");
+
+                    chatIcon.classList.remove("opacity-0");
+                    chatIcon.classList.add("opacity-100");
                 }
             });
 

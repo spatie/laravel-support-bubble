@@ -1,17 +1,15 @@
-<span id="support-bubble-chat-icon" style="display: inline">
-    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-         viewBox="0 0 512 512" style="enable-background:new 0 0 512 512; fill:white;" xml:space="preserve"
-        class="h-full w-full"
-    >
-    <style type="text/css">
-        .st0{fill-rule:evenodd;clip-rule:evenodd;}
-    </style>
-        <g>
-        <path class="st0" d="M85.7,365.7c6.7,6.8,10.1,16.1,9.2,25.6c-2.3,21.7-6.5,43.1-12.7,64c44.6-10.3,71.9-22.3,84.3-28.6
-            c7-3.6,15.1-4.4,22.7-2.4c21.8,5.8,44.3,8.7,66.9,8.7c127.9,0,224-89.8,224-192c0-102.1-96.1-192-224-192S32,139,32,241.1
-            C32,288.1,51.8,331.7,85.7,365.7z M69.9,490.7c-7.6,1.5-15.2,2.9-22.8,4.1c-6.4,1-11.3-5.6-8.7-11.6c2.8-6.7,5.4-13.5,7.8-20.4
-            l0.1-0.3c7.9-23,14.4-49.5,16.8-74.2C23.8,348.9,0,297.4,0,241.1c0-123.7,114.6-224,256-224s256,100.3,256,224s-114.6,224-256,224
-            c-25.4,0-50.6-3.3-75.1-9.8C164.3,463.7,128.5,479,69.9,490.7z"/>
-    </g>
-    </svg>
-</span>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    id="support-bubble-chat-icon"
+    class="absolute inset-0 m-auto opacity-100 transition-opacity duration-300 ease-in-out size-7"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785A5.969 5.969 0 0 0 6 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337Z"
+    />
+</svg>
