@@ -4,4 +4,5 @@
     class="{{ config('support-bubble.classes.bubble') }}"
 >
     @include('support-bubble::includes.chat-icon')
+    @include('support-bubble::includes.close-icon')
 </button>

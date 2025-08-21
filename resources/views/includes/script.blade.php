@@ -6,6 +6,8 @@
         const formContainer = element.querySelector('.spatie-support-bubble__form');
         const responseContainer = element.querySelector('.spatie-support-bubble__response');
         const errorMessage = element.querySelector('.spatie-support-bubble__error');
+        const chatIcon = element.querySelector('#support-bubble-chat-icon');
+        const closeIcon = element.querySelector('#support-bubble-close-icon');
 
         let fullTranslateClass = 'translate-x-full';
         let zeroTranslateClass = 'translate-x-0';
@@ -23,12 +25,24 @@
                 if (opening) {
                     responseContainer.style.display = 'none';
                     formContainer.style.display = 'block';
-                    
+
+                     chatIcon.classList.remove("opacity-100");
+                    chatIcon.classList.add("opacity-0");
+
+                    closeIcon.classList.remove("opacity-0");
+                    closeIcon.classList.add("opacity-100");
+
                     container.classList.remove(fullTranslateClass, 'opacity-0');
                     container.classList.add(zeroTranslateClass, 'opacity-100');
                 } else {
                     container.classList.remove(zeroTranslateClass, 'opacity-100');
                     container.classList.add(fullTranslateClass, 'opacity-0');
+
+                    closeIcon.classList.remove("opacity-100");
+                    closeIcon.classList.add("opacity-0");
+
+                    chatIcon.classList.remove("opacity-0");
+                    chatIcon.classList.add("opacity-100");
                 }
             });
 
