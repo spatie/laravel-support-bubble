@@ -2,6 +2,13 @@
 
 All notable changes to `laravel-support-bubble` will be documented in this file.
 
+## 1.9.1 - 2026-02-26
+
+### What's Changed
+
+- Add Laravel 13 compatibility
+- Update phpunit.xml.dist for PHPUnit 10+ compatibility
+
 ## 1.8.1 - 2025-02-21
 
 ### What's Changed
