@@ -2,6 +2,13 @@
 
 All notable changes to `laravel-support-bubble` will be documented in this file.
 
+## 1.9.2 - 2026-02-26
+
+### What's Changed
+
+- Drop support for Laravel 10 and 11
+- Clean up dev dependency version constraints
+
 ## 1.9.1 - 2026-02-26
 
 ### What's Changed
