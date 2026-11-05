@@ -35,9 +35,9 @@
         "brianium/paratest": "^7.4",
         "nunomaduro/collision": "^8.0",
         "orchestra/testbench": "^10.0|^11.0",
-        "pestphp/pest": "^3.7|^4.4",
-        "pestphp/pest-plugin-laravel": "^3.1|^4.1",
-        "phpunit/phpunit": "^11.5.3|^12.5.12",
+        "pestphp/pest": "^3.7|^4.4|^5.0",
+        "pestphp/pest-plugin-laravel": "^3.1|^4.1|^5.0",
+        "phpunit/phpunit": "^11.5.3|^12.5.12|^13.3.4",
         "spatie/laravel-ray": "^1.23",
         "spatie/pest-plugin-snapshots": "^2.1"
     },
