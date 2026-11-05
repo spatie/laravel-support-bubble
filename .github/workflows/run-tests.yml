@@ -45,6 +45,10 @@ jobs:
       - name: Install dependencies
         run: |
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+          if [ "${{ matrix.php }}" = "8.6" ]; then
+            # Laravel 13.31 adds the session handler create_sid() implementation.
+            composer require "laravel/framework:^13.31" --no-interaction --no-update
+          fi
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
       - name: List Installed Dependencies
